@@ -7,7 +7,7 @@ $BLOCKS = [
         'category' => 'common',
         'icon' => 'format-video',
         'keywords' => ['video', 'youtube'],
-        'post_types' => ['page', 'biographies', 'topics', 'places'],
+        'post_types' => ['page', 'biography', 'topic', 'place'],
         'mode' => 'auto',
         'supports' => [
             'align' => false
@@ -21,7 +21,7 @@ $BLOCKS = [
         'category' => 'common',
         'icon' => 'editor-ul',
         'keywords' => ['vita', 'Lebenslauf', 'cv'],
-        'post_types' => ['biographies'],
+        'post_types' => ['biography'],
         'mode' => 'auto',
         'supports' => [
             'align' => false
@@ -70,7 +70,7 @@ function allowed_block_types()
 
 function create_post_types()
 {
-    register_post_type('biographies', [
+    register_post_type('biography', [
         'labels' => [
             'name' => 'Biografien',
             'singular_name' => 'Biografie',
@@ -99,7 +99,7 @@ function create_post_types()
         ]
     ]);
 
-    register_post_type('topics', [
+    register_post_type('topic', [
         'labels' => [
             'name' => 'Themen',
             'singular_name' => 'Thema',
@@ -128,7 +128,7 @@ function create_post_types()
         ]
     ]);
 
-    register_post_type('places', [
+    register_post_type('place', [
         'labels' => [
             'name' => 'Orte',
             'singular_name' => 'Ort',
