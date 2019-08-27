@@ -1,4 +1,70 @@
 <?php
+  $BLOCKS = [
+    [
+      'name' => 'video',
+      'title' => __('Video'),
+      'render_callback'	=> 'acf_block_render_callback',
+      'category' 	=> 'common',
+      'icon' => 'format-video',
+      'keywords' 	=> ['video', 'youtube'],
+      'post_types' => ['page', 'biographies', 'topics', 'places'],
+      'mode' => 'auto',
+      'supports' => [
+        'align' => false,
+      ]
+      ],
+
+      [
+        'name' => 'vita',
+        'title' => __('Vita'),
+        'render_callback'	=> 'acf_block_render_callback',
+        'category' 	=> 'common',
+        'icon' => 'editor-ul',
+        'keywords' 	=> ['vita', 'Lebenslauf', 'cv'],
+        'post_types' => ['biographies'],
+        'mode' => 'auto',
+        'supports' => [
+          'align' => false,
+        ]
+      ]
+  ];
+
+  function acf_block_render_callback($block) {
+    $slug = str_replace('acf/', '', $block['name']);
+
+    if(file_exists(get_theme_file_path("blocks/{$slug}.php"))) {
+      include(get_theme_file_path("blocks/{$slug}.php"));
+    }
+  }
+
+  function acf_init_blocks() {
+    global $BLOCKS;
+
+    if(function_exists('acf_register_block_type')) {
+      foreach($BLOCKS as $block) {
+        acf_register_block_type($block);
+      }
+    }
+  }
+
+  function allowed_block_types() {
+    global $BLOCKS;
+
+    $acf_blocks = array_map(function($block) {
+      return "acf/{$block['name']}";
+    }, $BLOCKS);
+
+    $allowed_core_blocks = [
+      'core/heading',
+      'core/paragraph',
+      'core/image',
+      'core/gallery',
+      'core/quote'
+    ];
+
+    return array_merge($acf_blocks, $allowed_core_blocks);
+  }
+
   function create_post_types() {
     register_post_type('biographies', [
       'labels' => [
@@ -14,6 +80,7 @@
       ],
       'supports' => [
         'title',
+        'excerpt',
         'revisions',
         'editor',
         'thumbnail'
@@ -48,6 +115,7 @@
       ],
       'supports' => [
         'title',
+        'excerpt',
         'revisions',
         'editor',
         'thumbnail'
@@ -82,6 +150,7 @@
       ],
       'supports' => [
         'title',
+        'excerpt',
         'revisions',
         'editor',
         'thumbnail'
@@ -102,6 +171,11 @@
       ]
     ]);
   }
+
+  add_theme_support('post-thumbnails');
+
+  add_action('acf/init', 'acf_init_blocks');
+  add_filter('allowed_block_types', 'allowed_block_types');
 
   add_action('init', function () {
     create_post_types();
