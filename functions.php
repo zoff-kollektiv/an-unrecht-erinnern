@@ -162,6 +162,9 @@ add_theme_support('post-thumbnails');
 
 add_action('acf/init', 'acf_init_blocks');
 add_filter('allowed_block_types', 'allowed_block_types');
+add_action('wp_print_styles', function() {
+    wp_dequeue_style( 'wp-block-library' );
+}, 100 );
 
 add_action('init', function () {
     create_post_types();

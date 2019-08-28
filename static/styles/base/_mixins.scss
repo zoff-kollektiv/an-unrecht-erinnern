@@ -1,0 +1,35 @@
+@mixin constraint {
+  max-width: 83rem;
+  width: 100%;
+}
+
+@mixin constraint-small {
+  max-width: 70rem;
+  width: 100%;
+}
+
+@mixin clipped-headline ($color1, $color2) {
+  background: linear-gradient(to right, $color1, $color2);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin typo-body {
+  font-family: $font-family;
+  font-feature-settings: 'pnum' on, 'onum' on;
+  font-size: 1.8rem;
+  line-height: 1.66;
+}
+
+@mixin typo-h2 {
+  font-family: $font-family;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+@mixin typo-footnotes {
+  font-family: $font-family;
+  font-size: 1.3rem;
+  line-height: 1.7;
+}

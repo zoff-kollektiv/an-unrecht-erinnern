@@ -1,0 +1,16 @@
+.wp-block-image {
+  background-color: $color-charcoal;
+  color: $color-negative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  width: 100%;
+
+  > figcaption {
+    @include constraint-small;
+    @include typo-footnotes;
+  }
+}

@@ -1,13 +1,8 @@
-import autoprefixer from 'autoprefixer';
 import commonjs from 'rollup-plugin-commonjs';
 import copy from 'rollup-plugin-cpy';
 import postcss from 'rollup-plugin-postcss';
-import postcssCustomProperties from 'postcss-custom-properties';
-import postcssImport from 'postcss-import';
-import postcssNested from 'postcss-nested';
-import postcssImportExtGlob from 'postcss-import-ext-glob';
 import resolve from 'rollup-plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import { terser } from "rollup-plugin-terser";
 
 const { env } = process;
 const isProduction = env.NODE_ENV === 'production';
@@ -27,15 +22,7 @@ const CONFIG = {
     postcss({
       extract: true,
       minimize: isProduction,
-      plugins: [
-        postcssImportExtGlob(),
-        postcssImport(),
-        postcssCustomProperties({
-          preserve: false
-        }),
-        postcssNested(),
-        autoprefixer()
-      ]
+      plugins: []
     }),
 
     resolve(),
