@@ -158,8 +158,14 @@ function create_post_types()
     ]);
 }
 
-add_theme_support('post-thumbnails');
+function cleanup_admin()
+{
+    remove_menu_page('edit.php');
+    remove_menu_page('edit-comments.php');
+}
 
+add_theme_support('post-thumbnails');
+add_action('admin_menu', 'cleanup_admin');
 add_action('acf/init', 'acf_init_blocks');
 add_filter('allowed_block_types', 'allowed_block_types');
 add_action(
