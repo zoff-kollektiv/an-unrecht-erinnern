@@ -1,0 +1,44 @@
+.hero {
+  align-items: center;
+  background-color: $color-red-light;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 42rem;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+
+  &__image {
+    height: 100%;
+    left: 50%;
+    min-width: 100%;
+    mix-blend-mode: multiply;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  &__content {
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    @include typo-title;
+
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  &__excerpt {
+    @include typo-body;
+
+    font-weight: 700;
+    text-align: center;
+  }
+}
