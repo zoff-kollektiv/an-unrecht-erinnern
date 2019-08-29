@@ -1,14 +1,18 @@
 .block-content {
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns:
+    [full-start] minmax(1rem, 1fr)
+    [main-start] minmax(0, 82.4rem)
+    [main-end] minmax(1rem, 1fr)
+    [full-end];
 
   > * {
-    grid-column: span 10;
+    grid-column: main;
   }
 
-  > *:not(.wp-block-image):not(.vita) {
-    grid-column: 3 / span 6;
+  > .wp-block-image, .vita {
+    grid-column: full;
   }
 
   > p {

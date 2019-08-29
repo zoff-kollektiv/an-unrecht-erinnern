@@ -1,0 +1,18 @@
+.wp-block-quote {
+  color: $color-red-light;
+  margin: 0;
+  text-align: center;
+
+  > p {
+    @include typo-quote;
+
+    margin-bottom: 2rem;
+    margin-top: 0;
+  }
+
+  > cite {
+    @include typo-footnotes;
+
+    font-style: normal;
+  }
+}

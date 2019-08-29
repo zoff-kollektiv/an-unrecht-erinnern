@@ -9,7 +9,7 @@
   width: 100%;
 
   > img {
-    grid-column: span 10;
+    grid-column: full;
     grid-template-columns: subgrid;
     height: auto;
     width: 100%;
@@ -18,7 +18,7 @@
   > figcaption {
     @include typo-footnotes;
 
-    grid-column: 3 / span 6;
+    grid-column: main;
     grid-template-columns: subgrid;
   }
 }
