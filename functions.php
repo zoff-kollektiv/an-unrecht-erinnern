@@ -26,6 +26,20 @@ $BLOCKS = [
         'supports' => [
             'align' => false
         ]
+    ],
+
+    [
+        'name' => 'cards',
+        'title' => __('Cards'),
+        'render_callback' => 'acf_block_render_callback',
+        'category' => 'common',
+        'icon' => 'excerpt-view',
+        'keywords' => ['card'],
+        'post_types' => ['page'],
+        'mode' => 'auto',
+        'supports' => [
+            'align' => false
+        ]
     ]
 ];
 
@@ -162,6 +176,12 @@ function cleanup_admin()
 {
     remove_menu_page('edit.php');
     remove_menu_page('edit-comments.php');
+}
+
+function get_component($path, array $params = [])
+{
+    extract($params, EXTR_SKIP);
+    require get_template_directory() . '/components/' . $path . '.php';
 }
 
 add_theme_support('post-thumbnails');

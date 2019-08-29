@@ -1,0 +1,23 @@
+.card {
+  align-items: space-around;
+  background-color: $color-red-light;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+
+  &__title {
+    @include title-icons;
+
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &__description {
+    @include typo-body;
+
+    margin-bottom: 0;
+  }
+}
