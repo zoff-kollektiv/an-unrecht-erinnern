@@ -1,13 +1,3 @@
-@mixin constraint {
-  max-width: 83rem;
-  width: 100%;
-}
-
-@mixin constraint-small {
-  max-width: 70rem;
-  width: 100%;
-}
-
 @mixin clipped-headline ($color1, $color2) {
   background: linear-gradient(to right, $color1, $color2);
   background-clip: text;

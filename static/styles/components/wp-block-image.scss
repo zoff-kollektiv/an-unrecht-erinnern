@@ -1,16 +1,24 @@
 .wp-block-image {
   background-color: $color-charcoal;
   color: $color-negative;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: subgrid;
   margin: 0;
   padding-bottom: 2rem;
   padding-top: 2rem;
   width: 100%;
 
+  > img {
+    grid-column: span 10;
+    grid-template-columns: subgrid;
+    height: auto;
+    width: 100%;
+  }
+
   > figcaption {
-    @include constraint-small;
     @include typo-footnotes;
+
+    grid-column: 3 / span 6;
+    grid-template-columns: subgrid;
   }
 }

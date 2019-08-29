@@ -1,10 +1,14 @@
 .block-content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(10, 1fr);
+
+  > * {
+    grid-column: span 10;
+  }
 
   > *:not(.wp-block-image):not(.vita) {
-    @include constraint;
+    grid-column: 3 / span 6;
   }
 
   > p {
