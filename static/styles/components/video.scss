@@ -1,0 +1,38 @@
+.video {
+  background-color: $color-charcoal;
+  color: $color-negative;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rem;
+  text-decoration: none;
+
+  &__image {
+    flex: 1 1 50%;
+    height: auto;
+    max-width: 50rem;
+    object-fit: contain;
+  }
+
+  &__content {
+    align-self: center;
+    flex: 0 1 30%;
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+
+  &__length {
+    color: $color-red-light;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  &__description {
+    @include typo-footnotes;
+
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
