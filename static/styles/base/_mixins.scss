@@ -1,7 +1,11 @@
 @mixin clipped-headline ($color1, $color2) {
-  background: linear-gradient(to right, $color1, $color2);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $color1;
+
+  @supports(background-clip: text) {
+    background: linear-gradient(to right, $color1, $color2);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 @mixin typo-body {
