@@ -4,27 +4,33 @@
   flex-direction: row;
   flex-wrap: nowrap;
   list-style: none;
-  overflow: auto;
-  padding: 2rem 10rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+  scroll-snap-type: x mandatory;
   width: 100%;
 
   &__item {
     align-items: flex-end;
-    border-bottom: 0.2rem solid $color-red-light;
     display: flex;
-    margin-left: 2rem;
+    padding-left: 2rem;
     min-width: 25rem;
-
-    > p {
-      @include typo-body;
-
-      margin-bottom: 2rem;
-      margin-top: 0;
-      transform: rotate(-2deg);
-    }
+    scroll-snap-align: start;
   }
 
-  &__year {
+  &__item-description {
+    @include typo-body;
+
+    margin-bottom: 2rem;
+    margin-top: 0;
+    transform: rotate(-2deg);
+  }
+
+  &__item-container {
+    border-bottom: 0.2rem solid $color-red-light;
+    width: 100%;
+  }
+
+  &__item-year {
     display: block;
   }
 }
