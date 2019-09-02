@@ -1,5 +1,10 @@
 <a href="<?php echo $permalink; ?>" class="card">
-  <?php echo $thumbnail; ?>
-  <h2 class="card__title"><?php echo $title; ?></h2>
-  <p class="card__description"><?php echo $description; ?></p>
+  <?php echo get_the_post_thumbnail($id, 'card', [
+      'class' => 'card__image'
+  ]); ?>
+
+  <div class="card__content">
+    <h2 class="card__title"><?php echo $title; ?></h2>
+    <p class="card__description"><?php echo $description; ?></p>
+  </div>
 </a>
