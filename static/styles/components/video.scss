@@ -2,7 +2,6 @@
   background-color: $color-charcoal;
   color: $color-negative;
   display: grid;
-  flex-direction: row;
   grid-template-columns: subgrid;
   padding-top: 10rem;
   text-decoration: none;
@@ -11,7 +10,6 @@
     display: flex;
     grid-column-start: full-start;
     grid-column-end: main-end;
-    grid-template-columns: subgrid;
   }
 
   &__image {
