@@ -1,0 +1,24 @@
+.header {
+  &__content {
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    @include clipped-headline($color-red-dark, $color-red-light);
+    @include typo-title;
+
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  &__excerpt {
+    @include clipped-headline($color-red-dark, $color-red-light);
+    @include typo-body;
+
+    font-weight: 700;
+    text-align: center;
+  }
+}

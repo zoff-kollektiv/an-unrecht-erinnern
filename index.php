@@ -1,3 +1,12 @@
+<?php
+
+$header_css_class = 'header';
+
+if (has_post_thumbnail()) {
+    $header_css_class = 'hero';
+}
+?>
+
 <?php get_header(); ?>
 
 <main class="main">
@@ -5,17 +14,17 @@
       while (have_posts()):
           the_post(); ?>
 
-  <header class="hero">
+  <header class="<?php echo $header_css_class; ?>">
     <?php the_post_thumbnail('header', [
-        'class' => 'hero__image'
+        'class' => $header_css_class . '__image'
     ]); ?>
 
-    <div class="hero__content">
-      <h1 class="hero__title">
+    <div class="<?php echo $header_css_class; ?>__content">
+      <h1 class="<?php echo $header_css_class; ?>__title">
         <?php the_title(); ?>
       </h1>
 
-      <div class="hero__excerpt">
+      <div class="<?php echo $header_css_class; ?>__excerpt">
         <?php the_excerpt(); ?>
       </div>
     </div>

@@ -1,0 +1,8 @@
+.intro {
+  @include typo-intro;
+
+  color: $color-dark-stone;
+  margin-bottom: 10rem;
+  margin-top: 10rem;
+  text-align: center;
+}

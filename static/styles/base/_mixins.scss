@@ -15,6 +15,12 @@
   line-height: 1.66;
 }
 
+@mixin typo-intro {
+  font-family: $font-family;
+  font-size: 2rem;
+  line-height: 2;
+}
+
 @mixin typo-title {
   font-family: $font-family;
   font-size: 7.2rem;
