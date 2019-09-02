@@ -1,31 +1,58 @@
 .video {
   background-color: $color-charcoal;
   color: $color-negative;
-  display: flex;
+  display: grid;
   flex-direction: row;
+  grid-template-columns: subgrid;
   padding-top: 10rem;
   text-decoration: none;
 
+  &__inner-container {
+    display: flex;
+    grid-column-start: full-start;
+    grid-column-end: main-end;
+    grid-template-columns: subgrid;
+  }
+
   &__image {
-    flex: 1 1 50%;
+    flex: 1 0 auto;
     height: auto;
-    max-width: 50rem;
     object-fit: contain;
+    width: 60%;
   }
 
   &__content {
-    align-self: center;
-    flex: 0 1 30%;
     margin-bottom: auto;
     margin-top: auto;
+    padding-left: 2rem;
+  }
+
+  &__play-container {
+    align-items: center;
+    display: flex;
+    margin-bottom: 2rem;
+  }
+
+  &__play {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+    height: 5rem;
+    width: 7rem;
   }
 
   &__length {
     color: $color-red-light;
+    font-family: $font-family;
+    font-size: 4.2rem;
+    font-weight: 500;
+    line-height: 3rem;
+    margin-left: 2rem;
   }
 
   &__title {
-    margin-bottom: 1rem;
+    @include typo-body;
+
+    font-weight: 500;
+    margin-bottom: 0;
     margin-top: 0;
   }
 
