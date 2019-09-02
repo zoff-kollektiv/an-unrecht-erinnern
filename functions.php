@@ -40,6 +40,20 @@ $BLOCKS = [
         'supports' => [
             'align' => false
         ]
+    ],
+
+    [
+        'name' => 'intro',
+        'title' => __('Intro'),
+        'render_callback' => 'acf_block_render_callback',
+        'category' => 'common',
+        'icon' => 'editor-aligncenter',
+        'keywords' => ['intro'],
+        'post_types' => ['page'],
+        'mode' => 'auto',
+        'supports' => [
+            'align' => false
+        ]
     ]
 ];
 
