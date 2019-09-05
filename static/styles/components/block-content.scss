@@ -11,7 +11,7 @@
     grid-column: main;
   }
 
-  > .wp-block-gallery, .wp-block-image, .vita, .video {
+  > .wp-block-gallery, > .wp-block-image, > .wp-block-vita, > .video {
     grid-column: full;
   }
 
