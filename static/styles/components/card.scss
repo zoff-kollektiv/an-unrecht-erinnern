@@ -9,6 +9,15 @@
   text-align: center;
   text-decoration: none;
 
+  &:hover,
+  &:focus {
+    background-color: $color-red-dark;
+  }
+
+  &:visited {
+    background-color: blue;
+  }
+
   &__image {
     height: auto;
     max-width: 100%;

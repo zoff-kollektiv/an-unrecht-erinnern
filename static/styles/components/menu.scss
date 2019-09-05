@@ -8,7 +8,6 @@
   &__bars,
   &__close {
     height: 2rem;
-    vertical-align: middle;
     width: 2rem;
   }
 
@@ -28,18 +27,24 @@
     cursor: pointer;
     font-size: 0;
     line-height: 1;
+    list-style: none;
     margin-left: 2rem;
     margin-top: 2rem;
     position: relative;
     user-select: none;
     z-index: 11;
+
+    ::-webkit-details-marker,
+    ::marker {
+      display:none;
+    }
   }
 
   &__toggle-label {
     @include typo-h3;
 
     line-height: 1;
-    vertical-align: middle;
+    margin-left: 1rem;
   }
 
   &[open] &__toggle-label {
@@ -48,7 +53,7 @@
 
   &__inner {
     animation-direction: reverse;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.95);
     color: $color-charcoal;
     display: flex;
     flex-direction: column;
@@ -58,10 +63,10 @@
     margin-top: 0;
     min-height: 100vh;
     opacity: 0;
-    padding: 2rem;
+    padding: 4rem 2rem 2rem 2rem;
     position: absolute;
     top: 0;
-    transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in;
     transform: translateY(-100%);
     width: 100%;
     will-change: opacity;

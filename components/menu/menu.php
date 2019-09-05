@@ -54,14 +54,16 @@
               'post_type' => 'place'
           ]);
 
-          foreach ($places as $place) {
-              get_component('card/card', [
-                  'title' => $place->post_title,
-                  'description' => $place->post_excerpt,
-                  'permalink' => get_the_permalink($place->ID),
-                  'id' => $place->ID
-              ]);
-          }
+          foreach ($places as $place): ?>
+            <li class="cards__item">
+            <?php get_component('card/card', [
+                'title' => $place->post_title,
+                'description' => $place->post_excerpt,
+                'permalink' => get_the_permalink($place->ID),
+                'id' => $place->ID
+            ]); ?>
+            </li>
+          <?php endforeach;
           ?>
         </ul>
       </div>
@@ -80,14 +82,16 @@
               'post_type' => 'topic'
           ]);
 
-          foreach ($topics as $topic) {
-              get_component('card/card', [
-                  'title' => $topic->post_title,
-                  'description' => $topic->post_excerpt,
-                  'permalink' => get_the_permalink($topic->ID),
-                  'id' => $topic->ID
-              ]);
-          }
+          foreach ($topics as $topic): ?>
+            <li class="cards__item">
+            <?php get_component('card/card', [
+                'title' => $topic->post_title,
+                'description' => $topic->post_excerpt,
+                'permalink' => get_the_permalink($topic->ID),
+                'id' => $topic->ID
+            ]); ?>
+            </li>
+          <?php endforeach;
           ?>
         </ul>
       </div>

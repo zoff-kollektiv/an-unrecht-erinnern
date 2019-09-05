@@ -17,8 +17,7 @@ $posts = get_posts([
     foreach ($posts as $post):
         if ($type != 'biography') {
             $description = $post->post_excerpt;
-        }
-    ?>
+        } ?>
         <li class="cards__item">
             <?php get_component('card/card', [
                 'title' => $post->post_title,
@@ -27,7 +26,8 @@ $posts = get_posts([
                 'id' => $post->ID
             ]); ?>
         </li>
-        <?php endforeach;
+        <?php
+    endforeach;
     wp_reset_postdata();
     ?>
 

@@ -15,9 +15,13 @@ if (has_post_thumbnail()) {
           the_post(); ?>
 
   <header class="<?php echo $header_css_class; ?>">
-    <?php the_post_thumbnail('header', [
-        'class' => $header_css_class . '__image'
-    ]); ?>
+    <?php if (has_post_thumbnail()): ?>
+        <div class="<?php echo $header_css_class; ?>__image-container">
+          <?php the_post_thumbnail('header', [
+              'class' => $header_css_class . '__image'
+          ]); ?>
+        </div>
+    <?php endif; ?>
 
     <?php get_component('menu/menu', [
         'location' => 'header'
