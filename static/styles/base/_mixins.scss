@@ -2,7 +2,7 @@
   color: $color1;
 
   @supports(background-clip: text) {
-    background: linear-gradient(to right, $color1, $color2);
+    background: linear-gradient(to right, $color1, $color2 30%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }

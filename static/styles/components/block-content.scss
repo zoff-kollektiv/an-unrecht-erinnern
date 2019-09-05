@@ -23,7 +23,8 @@
 
   > h2 {
     @include typo-h2;
-    @include clipped-headline($color-red-dark, $color-red-light);
+    @include clipped-headline($color-red-dark, $color-red-superlight);
+
     margin-bottom: 2rem;
     margin-top: 9rem;
   }

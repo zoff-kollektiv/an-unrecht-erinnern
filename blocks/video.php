@@ -17,7 +17,7 @@ $image_id = get_field('image');
     <div class="video__content">
       <div class="video__play-container">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 70" class="video__play">
-          <rect width="105" height="70" x="-5px" y="0" fill="#B11414" />
+          <rect width="105" height="70" x="-5px" y="0" fill="currentColor" />
           <path fill="#fff" d="M36.8257 48.8762V22.1238L58.795 35.6783 36.8257 48.8762z"/>
         </svg>
 
