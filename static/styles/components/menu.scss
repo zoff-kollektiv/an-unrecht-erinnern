@@ -25,6 +25,7 @@
 
   &__toggle {
     cursor: pointer;
+    display: flex;
     font-size: 0;
     line-height: 1;
     list-style: none;
@@ -32,19 +33,26 @@
     margin-top: 2rem;
     position: relative;
     user-select: none;
+    width: 10rem;
     z-index: 11;
 
     ::-webkit-details-marker,
     ::marker {
       display:none;
     }
+
+    &:hover,
+    &:focus {
+      color: $color-red-dark;
+    }
   }
 
   &__toggle-label {
-    @include typo-h3;
-
+    font-family: $font-family;
+    font-size: 2.2rem;
+    font-weight: 500;
     line-height: 1;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
 
   &[open] &__toggle-label {
@@ -66,10 +74,10 @@
     padding: 4rem 2rem 2rem 2rem;
     position: absolute;
     top: 0;
-    transition: all 200ms ease-in;
+    transition: opacity 200ms ease-in, transform 250ms ease-in-out;
     transform: translateY(-100%);
     width: 100%;
-    will-change: opacity;
+    will-change: opacity transform;
   }
 
   &[open] &__inner {
