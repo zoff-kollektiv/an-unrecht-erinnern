@@ -7,18 +7,22 @@ $posts = get_posts([
 ]);
 ?>
 
-<section class="cards">
+<section class="cards cards--<?php echo $type['value']; ?>">
     <h2 class="cards__title">
         <?php echo $title; ?>
     </h2>
 
     <ul class="cards__list">
     <?php
-    foreach ($posts as $post): ?>
+    foreach ($posts as $post):
+        if ($type != 'biography') {
+            $description = $post->post_excerpt;
+        }
+    ?>
         <li class="cards__item">
             <?php get_component('card/card', [
                 'title' => $post->post_title,
-                'description' => $post->post_excerpt,
+                'description' => $description,
                 'permalink' => get_the_permalink($post->ID),
                 'id' => $post->ID
             ]); ?>

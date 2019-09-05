@@ -5,6 +5,8 @@
 
   <div class="card__content">
     <h2 class="card__title"><?php echo $title; ?></h2>
-    <p class="card__description"><?php echo $description; ?></p>
+    <?php if (isset($description) && $description != null) : ?>
+      <p class="card__description"><?php echo $description; ?></p>
+    <?php endif; ?>
   </div>
 </a>

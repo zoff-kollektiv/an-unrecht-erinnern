@@ -19,6 +19,10 @@ if (has_post_thumbnail()) {
         'class' => $header_css_class . '__image'
     ]); ?>
 
+    <?php get_component('menu/menu', [
+        'location' => 'header'
+    ]); ?>
+
     <div class="<?php echo $header_css_class; ?>__content">
       <h1 class="<?php echo $header_css_class; ?>__title">
         <?php the_title(); ?>

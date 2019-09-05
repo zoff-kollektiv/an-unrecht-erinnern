@@ -57,6 +57,10 @@ $BLOCKS = [
     ]
 ];
 
+class Unrecht_Walker_Menu extends Walker_Nav_Menu
+{
+}
+
 function acf_block_render_callback($block)
 {
     $slug = str_replace('acf/', '', $block['name']);
@@ -198,8 +202,17 @@ function get_component($path, array $params = [])
     require get_template_directory() . '/components/' . $path . '.php';
 }
 
+function register_custom_nav_menus()
+{
+    register_nav_menus(array(
+        'header' => 'Navigation',
+        'footer' => 'Footer'
+    ));
+}
+
 add_post_type_support('page', 'excerpt');
 add_theme_support('post-thumbnails');
+add_action('after_setup_theme', 'register_custom_nav_menus');
 add_action('admin_menu', 'cleanup_admin');
 add_action('acf/init', 'acf_init_blocks');
 add_filter('allowed_block_types', 'allowed_block_types');

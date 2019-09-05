@@ -6,16 +6,20 @@
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
     list-style: none;
     margin-bottom: 0;
     margin-top: 0;
     padding-left: 0;
   }
 
+  &--topic &__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   &__item {
-    flex: 0 0 50%;
     max-width: 100%;
   }
 }
