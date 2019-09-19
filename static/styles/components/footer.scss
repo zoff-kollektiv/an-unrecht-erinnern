@@ -1,4 +1,28 @@
 .footer {
   background-color: $color-red-light;
   color: white;
+  display: flex;
+  justify-content: center;
+
+  .menu > ul {
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 0;
+  }
+
+  .menu a {
+    @include typo-body();
+
+    display: block;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
 }

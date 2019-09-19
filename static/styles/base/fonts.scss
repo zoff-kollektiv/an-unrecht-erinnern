@@ -80,3 +80,25 @@ $unicode-range-cyrillic: U+0400-045F, U+0472-0473, U+0490-049D, U+04A0-04A5, U+0
        url($font-path + '/IBMPlexSans-Regular-Cyrillic.woff') format('woff');
   unicode-range: $unicode-range-cyrillic;
 }
+
+/* Serif */
+
+@font-face {
+  font-display: swap;
+  font-family: 'IBM Plex Serif';
+  font-style: italic;
+  font-weight: 500;
+  src: url($font-path + '/IBMPlexSerif-SemiBoldItalic-Latin1.woff2') format('woff2'),
+       url($font-path + '/IBMPlexSerif-SemiBoldItalic-Latin1.woff') format('woff');
+  unicode-range: $unicode-range-latin1;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'IBM Plex Serif';
+  font-style: italic;
+  font-weight: 500;
+  src: url($font-path + '/IBMPlexSerif-SemiBoldItalic-Cyrillic.woff2') format('woff2'),
+       url($font-path + '/IBMPlexSerif-SemiBoldItalic-Cyrillic.woff') format('woff');
+  unicode-range: $unicode-range-cyrillic;
+}
