@@ -19,7 +19,7 @@
     text-decoration: underline;
   }
 
-  &__item-icon {
+  & > svg {
     flex: 0 0 4.5rem;
     height: auto;
     margin-top: 0.95rem;
