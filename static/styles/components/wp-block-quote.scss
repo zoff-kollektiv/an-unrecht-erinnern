@@ -1,15 +1,26 @@
 .wp-block-quote {
   color: $color-red-light;
-  margin: 0;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   text-align: center;
+
+  @include mq($from: tablet) {
+    margin-bottom: 6rem;
+    margin-top: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 
   > p {
     @include typo-quote;
 
     margin-bottom: 2rem;
     margin-top: 0;
+
+    @include mq($until: tablet) {
+      hyphens: auto;
+    }
   }
 
   > cite {

@@ -1,41 +1,93 @@
 .video {
-  background-color: $color-charcoal;
-  color: $color-negative;
   display: grid;
   grid-template-columns: subgrid;
   padding-top: 10rem;
   text-decoration: none;
 
+  @include mq($from: tablet) {
+    background-color: $color-charcoal;
+    color: $color-negative;
+  }
+
   &__inner-container {
     display: flex;
+    flex-direction: column;
     grid-column-start: full-start;
-    grid-column-end: main-end;
+    grid-column-end: full-end;
+    position: relative;
+
+    @include mq($until: tablet) {
+      color: $color-negative;
+    }
+
+    @include mq($from: tablet) {
+      flex-direction: row;
+      grid-column-end: main-end;
+    }
+  }
+
+  &__image-container {
+    flex: 1 0 auto;
+    font-size: 0;
+    width: 100%;
+
+    @include mq($until: tablet) {
+      background-color: $color-charcoal;
+    }
+
+    @include mq($from: tablet) {
+      width: 60%;
+    }
   }
 
   &__image {
-    flex: 1 0 auto;
     height: auto;
     object-fit: contain;
-    width: 60%;
+    object-position: right bottom;
+    width: 75%;
+
+    @include mq($from: tablet) {
+      width: 100%;
+    }
   }
 
   &__content {
     margin-bottom: auto;
     margin-top: auto;
-    padding-left: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+
+    @include mq($from: tablet) {
+      padding-left: 2rem;
+      padding-right: 0;
+      padding-top: 0;
+    }
   }
 
   &__play-container {
     align-items: center;
     display: flex;
     margin-bottom: 2rem;
+
+    @include mq($until: tablet) {
+      position: absolute;
+      right: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   &__play {
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
     color: $color-red-light;
-    height: 5rem;
-    width: 7rem;
+    height: 3.5rem;
+    width: 5rem;
+
+    @include mq($from: tablet) {
+      height: 5rem;
+      width: 7rem;
+    }
   }
 
   &:hover &__play ,
@@ -46,10 +98,15 @@
   &__length {
     color: $color-red-light;
     font-family: $font-family;
-    font-size: 4.2rem;
+    font-size: 3rem;
     font-weight: 500;
-    line-height: 3rem;
+    line-height: 1;
     margin-left: 2rem;
+
+    @include mq($from: tablet) {
+      font-size: 4.2rem;
+      line-height: 3rem;
+    }
   }
 
   &__title {

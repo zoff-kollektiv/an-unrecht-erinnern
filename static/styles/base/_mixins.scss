@@ -23,9 +23,14 @@
 
 @mixin typo-title {
   font-family: $font-family;
-  font-size: 7.2rem;
+  font-size: 4.8rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1;
+
+  @include mq($from: tablet) {
+    font-size: 7.2rem;
+    line-height: 1.3;
+  }
 }
 
 @mixin typo-h2 {
@@ -50,10 +55,14 @@
 
 @mixin typo-quote {
   font-family: $font-family-serif;
-  font-size: 4.8rem;
+  font-size: 3rem;
   font-style: italic;
   font-weight: 500;
   line-height: 1.1;
+
+  @include mq($from: tablet) {
+    font-size: 4.8rem;
+  }
 }
 
 @mixin title-icons {

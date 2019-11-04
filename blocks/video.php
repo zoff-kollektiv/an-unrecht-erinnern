@@ -9,10 +9,12 @@ $image_id = get_field('image');
 
 <a href="<?php echo $url; ?>" class="video">
   <div class="video__inner-container">
-    <?php echo wp_get_attachment_image($image_id, 'video', false, [
-        'class' => 'video__image',
-        'loading' => 'lazy'
-    ]); ?>
+    <div class="video__image-container">
+      <?php echo wp_get_attachment_image($image_id, 'video', false, [
+          'class' => 'video__image',
+          'loading' => 'lazy'
+      ]); ?>
+    </div>
 
     <div class="video__content">
       <div class="video__play-container">

@@ -37,11 +37,15 @@
   }
 
   &__item-description {
-    @include typo-body;
+    @include typo-footnotes;
 
     margin-bottom: 2rem;
     margin-top: 0;
     transform: rotate(-2deg);
+
+    @include mq($from: tablet) {
+      @include typo-body;
+    }
   }
 
   &__item-container {
@@ -51,5 +55,8 @@
 
   &__item-year {
     display: block;
+    font-family: $font-family;
+    font-size: 2.4rem;
+    font-weight: 700;
   }
 }
