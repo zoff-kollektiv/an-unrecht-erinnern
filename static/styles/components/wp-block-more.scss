@@ -1,0 +1,47 @@
+.wp-block-more {
+  list-style: none;
+  padding-left: 0;
+
+  > * + * {
+    margin-top: 2rem;
+  }
+
+  &__item {
+    align-items: flex-start;
+    display: flex;
+    text-decoration: none;
+    max-width: 75%;
+  }
+
+  &__item:hover &__item-title,
+  &__item:focus &__item-title {
+    color: $color-red-dark;
+    text-decoration: underline;
+  }
+
+  &__item-icon {
+    flex: 0 0 4.5rem;
+    height: auto;
+    margin-top: 0.95rem;
+    max-height: 100%;
+  }
+
+  &__item-content-container {
+    margin-left: 1.5rem;
+  }
+
+  &__item-title {
+    @include typo-body;
+
+    flex: 0 1 auto;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &__item-description {
+    @include typo-footnotes;
+
+    margin-top: 0.5rem;
+  }
+}
