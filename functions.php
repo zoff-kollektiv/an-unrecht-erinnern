@@ -1,4 +1,7 @@
 <?php
+
+require_once 'plugin-tooltip/index.php';
+
 $BLOCKS = [
     [
         'name' => 'video',
@@ -56,6 +59,8 @@ $BLOCKS = [
         ]
     ]
 ];
+
+new Tooltip();
 
 class Unrecht_Walker_Menu extends Walker_Nav_Menu
 {

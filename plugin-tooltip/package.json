@@ -1,0 +1,23 @@
+{
+  "name": "plugin-tooltip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "lint:js": "wp-scripts lint-js src/index.js",
+    "lint:js-fix": "wp-scripts lint-js src/index.js --fix",
+    "lint:css": "wp-scripts lint-style '**/*.css'",
+    "lint:css-fix": "wp-scripts lint-style '**/*.css' --fix"
+  },
+  "author": "Gustav Pursche <pursche@posteo.de>",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "5.0.1"
+  },
+  "dependencies": {
+    "@wordpress/block-editor": "^3.2.3",
+    "@wordpress/rich-text": "^3.7.2"
+  }
+}
