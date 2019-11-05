@@ -11,7 +11,7 @@
     grid-column: main;
   }
 
-  > .wp-block-gallery, > .wp-block-image, > .wp-block-vita, > .video {
+  > .wp-block-gallery, > .wp-block-image, > .wp-block-vita, > .video, > .hr {
     grid-column: full;
   }
 
@@ -34,7 +34,7 @@
 
     @include mq($from: tablet) {
       margin-bottom: 2rem;
-      margin-top: 9rem;
+      margin-top: 7rem;
     }
   }
 }

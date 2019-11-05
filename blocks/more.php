@@ -48,6 +48,8 @@ $ICON = [
   '
 ]; ?>
 
+<hr class="hr" />
+
 <h2>weiterlesen</h2>
 
 <?php if (have_rows('links')): ?>
