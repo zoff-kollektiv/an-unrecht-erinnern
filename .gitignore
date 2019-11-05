@@ -61,3 +61,6 @@ typings/
 .next
 
 dist/
+
+plugin-tooltip/build/
+plugin-tooltip/node_modules/

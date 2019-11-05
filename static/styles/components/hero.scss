@@ -4,10 +4,14 @@
   color: white;
   display: flex;
   flex-direction: column;
-  height: 42rem;
+  height: 50rem;
   justify-content: center;
   position: relative;
   width: 100%;
+
+  @include mq($from: tablet) {
+    height: 42rem;
+  }
 
   &__image-container {
     height: 100%;

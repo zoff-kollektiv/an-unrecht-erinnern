@@ -1,4 +1,7 @@
 <?php
+
+require_once 'plugin-tooltip/index.php';
+
 $BLOCKS = [
     [
         'name' => 'video',
@@ -54,12 +57,24 @@ $BLOCKS = [
         'supports' => [
             'align' => false
         ]
+    ],
+
+    [
+        'name' => 'more',
+        'title' => __('Read more'),
+        'render_callback' => 'acf_block_render_callback',
+        'category' => 'common',
+        'icon' => 'editor-ul',
+        'keywords' => ['more', 'read'],
+        'post_types' => ['page', 'biography', 'topic', 'place'],
+        'mode' => 'auto',
+        'supports' => [
+            'align' => false
+        ]
     ]
 ];
 
-class Unrecht_Walker_Menu extends Walker_Nav_Menu
-{
-}
+new Tooltip();
 
 function acf_block_render_callback($block)
 {
