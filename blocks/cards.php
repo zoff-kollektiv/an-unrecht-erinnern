@@ -14,19 +14,17 @@ $posts = get_posts([
 
     <ul class="cards__list">
     <?php
-    foreach ($posts as $post):
-        $description =
-            $type['value'] === 'biography' ? null : $post->post_excerpt; ?>
+    foreach ($posts as $post): ?>
         <li class="cards__item">
             <?php get_component('card/card', [
                 'title' => $post->post_title,
-                'description' => $description,
+                'description' =>
+                    $type['value'] === 'biography' ? null : $post->post_excerpt,
                 'permalink' => get_the_permalink($post->ID),
                 'id' => $post->ID
             ]); ?>
         </li>
-        <?php
-    endforeach;
+        <?php endforeach;
     wp_reset_postdata();
     ?>
 
