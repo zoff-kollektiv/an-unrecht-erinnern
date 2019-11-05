@@ -8,6 +8,6 @@ export const init = gallery => {
   items.forEach(item => item.addEventListener('click', event => {
     event.preventDefault();
 
-    scrollToItem(event.target);
+    scrollToItem(event.currentTarget);
   }));
 };
