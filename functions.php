@@ -239,6 +239,16 @@ add_action(
     100
 );
 
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script(
+        'styles',
+        get_template_directory_uri() . '/dist/index.js',
+        array(),
+        filemtime(get_template_directory() . '/dist/index.js'),
+        false
+    );
+});
+
 add_action('init', function () {
     create_post_types();
 });
