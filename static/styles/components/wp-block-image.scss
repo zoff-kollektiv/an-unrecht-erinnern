@@ -21,6 +21,8 @@
     grid-column: full;
     grid-template-columns: subgrid;
     height: auto;
+    max-height: 95vh;
+    object-fit: contain;
     width: 100%;
   }
 
