@@ -37,4 +37,12 @@
       margin-top: 7rem;
     }
   }
+
+  > .cards {
+    @include mq($from: tablet) {
+      margin-left: -5rem;
+      margin-right: -5rem;
+      max-width: none;
+    }
+  }
 }

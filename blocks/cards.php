@@ -15,9 +15,8 @@ $posts = get_posts([
     <ul class="cards__list">
     <?php
     foreach ($posts as $post):
-        if ($type != 'biography') {
-            $description = $post->post_excerpt;
-        } ?>
+        $description =
+            $type['value'] === 'biography' ? null : $post->post_excerpt; ?>
         <li class="cards__item">
             <?php get_component('card/card', [
                 'title' => $post->post_title,
