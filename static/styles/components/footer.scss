@@ -5,6 +5,26 @@
   justify-content: center;
   margin-top: 4rem;
 
+  &__sm-container {
+    align-self: flex-end;
+    display: flex;
+    margin-left: 0;
+  }
+
+  &__sm-link {
+    display: block;
+
+    > svg {
+      height: auto;
+      max-height: 100%;
+      width: 2rem;
+    }
+
+    & + & {
+      margin-left: 1rem;
+    }
+  }
+
   .menu {
     list-style: none;
     margin-bottom: 0;
