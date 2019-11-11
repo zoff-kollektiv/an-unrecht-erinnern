@@ -20,7 +20,7 @@ $ICON = [
     </svg>
   ',
 
-    'external' => '
+    'book' => '
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 45 60">
       <rect width="45" height="60" fill="#B11414" rx="1"/>
       <g filter="url(#filter0_i)">
@@ -55,19 +55,35 @@ $ICON = [
 <?php if (have_rows('links')): ?>
   <ul class="wp-block-more">
     <?php while (have_rows('links')):
-        the_row(); ?>
-      <li>
-        <a href="<?php echo get_sub_field(
+        the_row();
+
+        if( get_row_layout() == 'book' ) {
+          $link = get_sub_field(
             'link'
-        ); ?>" class="wp-block-more__item">
-          <?php echo $ICON['internal']; ?>
+          );
+          $icon = $ICON['book'];
+          $title = get_sub_field(
+            'title'
+          );
+          $description = get_sub_field('description');
+        } else {
+          $post_id = get_sub_field('link');
+          $post = get_post($post_id);
+
+          $title = $post->post_title;
+          $description = $post->post_excerpt;
+          $link = get_permalink($post_id);
+          $icon = $ICON['internal'];
+        }
+    ?>
+      <li>
+        <a href="<?php echo $link ?>" class="wp-block-more__item">
+          <?php echo $icon; ?>
 
           <div class="wp-block-more__item-content-container">
-            <h3 class="wp-block-more__item-title"><?php echo get_sub_field(
-                'title'
-            ); ?></h3>
+            <h3 class="wp-block-more__item-title"><?php echo $title ?></h3>
             <p class="wp-block-more__item-description">
-              <?php echo get_sub_field('description'); ?>
+              <?php echo $description ?>
             </p>
           </div>
         </a>
