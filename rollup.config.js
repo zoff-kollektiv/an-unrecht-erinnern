@@ -1,49 +1,45 @@
-import autoprefixer from 'autoprefixer';
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import copy from 'rollup-plugin-cpy';
-import postcss from 'rollup-plugin-postcss';
-import resolve from 'rollup-plugin-node-resolve';
+import autoprefixer from "autoprefixer";
+import babel from "rollup-plugin-babel";
+import commonjs from "rollup-plugin-commonjs";
+import copy from "rollup-plugin-cpy";
+import postcss from "rollup-plugin-postcss";
+import resolve from "rollup-plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 
 const { env } = process;
-const isProduction = env.NODE_ENV === 'production';
+const isProduction = env.NODE_ENV === "production";
 
 const CONFIG = [
   {
     plugins: [
       copy({
-        files: [
-          './static/fonts/**/*'
-        ],
-        dest: './dist/fonts/',
+        files: ["./static/fonts/**/*"],
+        dest: "./dist/fonts/",
         options: {
           verbose: true
         }
       }),
 
       babel({
-        exclude: 'node_modules/**'
+        exclude: "node_modules/**"
       }),
 
       postcss({
         extract: true,
         minimize: isProduction,
-        plugins: [
-          autoprefixer()
-        ]
+        plugins: [autoprefixer()]
       }),
 
       resolve(),
       commonjs()
     ],
 
-    input: './static/index.js',
+    input: "./static/index.js",
 
     output: {
-      file: './dist/index.js',
-      format: 'iife',
-      sourcemap: isProduction ? false : 'inline'
+      file: "./dist/index.js",
+      format: "iife",
+      sourcemap: isProduction ? false : "inline"
     }
   },
 
@@ -59,15 +55,15 @@ const CONFIG = [
       commonjs()
     ],
 
-    input: './static/index-admin.js',
+    input: "./static/index-admin.js",
 
     output: {
-      file: './dist/index-admin.js',
-      format: 'iife',
-      sourcemap: isProduction ? false : 'inline'
+      file: "./dist/index-admin.js",
+      format: "iife",
+      sourcemap: isProduction ? false : "inline"
     }
   }
-]
+];
 
 if (isProduction) {
   CONFIG.forEach(config => config.plugins.push(terser()));
