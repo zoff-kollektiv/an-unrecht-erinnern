@@ -25,7 +25,7 @@ export const init = video => {
     container.appendChild(iframe);
     embed.appendChild(container);
 
-    video.classList.add('video--embed-active');
+    video.classList.add("video--embed-active");
     video.appendChild(embed);
   });
 };
