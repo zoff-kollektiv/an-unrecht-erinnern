@@ -1,0 +1,33 @@
+.edit-post-visual-editor {
+  p {
+    @include typo-body;
+  }
+
+  cite,
+  figcaption {
+    @include typo-footnotes;
+
+    font-size: 0.8rem !important;
+  }
+}
+
+.editor-post-title__block .editor-post-title__input {
+  @include typo-title;
+
+  color: $color-red-dark;
+  font-size: 2rem !important;
+}
+
+.edit-post-visual-editor h2 {
+  @include typo-h2;
+
+  color: $color-red-dark;
+  font-size: 1.5rem !important;
+}
+
+.edit-post-visual-editor h3 {
+  @include typo-h3;
+
+  color: $color-red-dark;
+  font-size: 1.25rem !important;
+}

@@ -253,4 +253,12 @@ add_action('init', function () {
     create_post_types();
 });
 
+add_action('enqueue_block_editor_assets', function () {
+    wp_enqueue_style(
+        'gutenberg-blocks',
+        get_theme_file_uri('/dist/index-admin.css'),
+        false
+    );
+});
+
 ?>

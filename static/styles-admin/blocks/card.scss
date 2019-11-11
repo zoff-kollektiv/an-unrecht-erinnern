@@ -1,0 +1,10 @@
+@import "../../styles/components/card.scss";
+
+.card {
+  min-width: 0;
+  padding: 0 !important;
+
+  &__title {
+    color: white !important;
+  }
+}

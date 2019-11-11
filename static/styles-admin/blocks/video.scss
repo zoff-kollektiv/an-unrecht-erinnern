@@ -1,0 +1,18 @@
+@import "../../styles/components/video.scss";
+
+.video {
+  background-color: transparent;
+
+  &__image-container {
+    width: 30% !important;
+  }
+
+  &__play {
+    height: 1.5rem !important;
+    width: 2.75rem !important;
+  }
+
+  &__length {
+    font-size: 2rem !important;
+  }
+}

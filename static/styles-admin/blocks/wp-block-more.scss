@@ -1,0 +1,22 @@
+@import "../../styles/components/wp-block-more.scss";
+
+.wp-block-more {
+  list-style-type: none !important;
+
+  &::before {
+    display: none !important;
+  }
+
+  &__item {
+    max-width: 100% !important;
+  }
+
+  &__item-content-container {
+    text-align: left !important;
+  }
+
+  &__item-title,
+  &__item-description {
+    white-space: normal;
+  }
+}

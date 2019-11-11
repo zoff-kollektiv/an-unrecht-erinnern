@@ -8,43 +8,66 @@ import { terser } from "rollup-plugin-terser";
 const { env } = process;
 const isProduction = env.NODE_ENV === 'production';
 
-const CONFIG = {
-  plugins: [
-    copy({
-      files: [
-        './static/fonts/**/*'
-      ],
-      dest: './dist/fonts/',
-      options: {
-        verbose: true
-      }
-    }),
+const CONFIG = [
+  {
+    plugins: [
+      copy({
+        files: [
+          './static/fonts/**/*'
+        ],
+        dest: './dist/fonts/',
+        options: {
+          verbose: true
+        }
+      }),
 
-    babel({
-      exclude: 'node_modules/**'
-    }),
+      babel({
+        exclude: 'node_modules/**'
+      }),
 
-    postcss({
-      extract: true,
-      minimize: isProduction,
-      plugins: []
-    }),
+      postcss({
+        extract: true,
+        minimize: isProduction,
+        plugins: []
+      }),
 
-    resolve(),
-    commonjs()
-  ],
+      resolve(),
+      commonjs()
+    ],
 
-  input: './static/index.js',
+    input: './static/index.js',
 
-  output: {
-    file: './dist/index.js',
-    format: 'iife',
-    sourcemap: isProduction ? false : 'inline'
+    output: {
+      file: './dist/index.js',
+      format: 'iife',
+      sourcemap: isProduction ? false : 'inline'
+    }
+  },
+
+  {
+    plugins: [
+      postcss({
+        extract: true,
+        minimize: isProduction,
+        plugins: []
+      }),
+
+      resolve(),
+      commonjs()
+    ],
+
+    input: './static/index-admin.js',
+
+    output: {
+      file: './dist/index-admin.js',
+      format: 'iife',
+      sourcemap: isProduction ? false : 'inline'
+    }
   }
-};
+]
 
 if (isProduction) {
-  CONFIG.plugins.push(terser());
+  CONFIG.forEach(config => config.plugins.push(terser()));
 }
 
 export default CONFIG;
