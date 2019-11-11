@@ -79,3 +79,13 @@
     font-size: 3rem;
   }
 }
+
+@mixin block-content {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns:
+    [full-start] minmax(1rem, 1fr)
+    [main-start] minmax(0, 82.4rem)
+    [main-end] minmax(1rem, 1fr)
+    [full-end];
+}

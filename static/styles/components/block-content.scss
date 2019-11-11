@@ -1,11 +1,6 @@
 .block-content {
-  display: grid;
-  grid-gap: 2rem;
-  grid-template-columns:
-    [full-start] minmax(1rem, 1fr)
-    [main-start] minmax(0, 82.4rem)
-    [main-end] minmax(1rem, 1fr)
-    [full-end];
+  @include block-content;
+
   min-height: 80vh;
 
   > * {
@@ -40,7 +35,7 @@
   }
 
   > .cards {
-    @include mq($from: tablet) {
+    @include mq($from: desktop) {
       margin-left: -5rem;
       margin-right: -5rem;
       max-width: none;

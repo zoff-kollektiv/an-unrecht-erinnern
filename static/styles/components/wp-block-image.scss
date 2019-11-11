@@ -1,25 +1,16 @@
 .wp-block-image {
+  @include block-content;
+
   align-items: center;
   background-color: $color-charcoal;
   color: $color-negative;
-  display: flex;
-  flex-direction: column;
   margin: 0;
   padding-bottom: 2rem;
   padding-top: 2rem;
   width: 100%;
 
-  @supports (display: grid) {
-    display: grid;
-  }
-
-  @supports (grid-template-columns: subgrid) {
-    grid-template-columns: subgrid;
-  }
-
   > img {
     grid-column: full;
-    grid-template-columns: subgrid;
     height: auto;
     max-height: 95vh;
     object-fit: contain;
@@ -30,11 +21,5 @@
     @include typo-footnotes;
 
     grid-column: main;
-    max-width: 82.4rem;
-
-    @supports (grid-template-columns: subgrid) {
-      grid-template-columns: subgrid;
-      max-width: none;
-    }
   }
 }

@@ -1,6 +1,6 @@
 .video {
-  display: grid;
-  grid-template-columns: subgrid;
+  @include block-content;
+
   padding-top: 10rem;
   text-decoration: none;
 

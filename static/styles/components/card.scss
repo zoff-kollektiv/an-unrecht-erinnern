@@ -12,11 +12,11 @@
 
   &:hover,
   &:focus {
-    background-color: $color-red-light;
+    background-color: $color-red-dark;
   }
 
   &:visited {
-    background-color: $color-red-dark;
+    background-color: darken($color-red-dark, 15%);
   }
 
   &__image {
