@@ -1,3 +1,4 @@
+import autoprefixer from 'autoprefixer';
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import copy from 'rollup-plugin-cpy';
@@ -28,7 +29,9 @@ const CONFIG = [
       postcss({
         extract: true,
         minimize: isProduction,
-        plugins: []
+        plugins: [
+          autoprefixer()
+        ]
       }),
 
       resolve(),
