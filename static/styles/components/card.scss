@@ -1,6 +1,6 @@
 .card {
   align-items: space-around;
-  background-color: $color-red-light;
+  background-color: $color-red-superlight;
   color: white;
   display: flex;
   flex-direction: column;
@@ -12,11 +12,11 @@
 
   &:hover,
   &:focus {
-    background-color: $color-red-dark;
+    background-color: $color-red-light;
   }
 
   &:visited {
-    background-color: blue;
+    background-color: $color-red-dark;
   }
 
   &__image {

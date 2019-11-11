@@ -15,17 +15,19 @@ if (has_post_thumbnail()) {
           the_post(); ?>
 
   <header class="<?php echo $header_css_class; ?>">
-    <?php if (has_post_thumbnail()): ?>
-        <div class="<?php echo $header_css_class; ?>__image-container">
-          <?php the_post_thumbnail('header', [
-              'class' => $header_css_class . '__image'
-          ]); ?>
-        </div>
-    <?php endif; ?>
+    <?php if(!is_front_page()) : ?>
+      <?php if (has_post_thumbnail()): ?>
+          <div class="<?php echo $header_css_class; ?>__image-container">
+            <?php the_post_thumbnail('header', [
+                'class' => $header_css_class . '__image'
+            ]); ?>
+          </div>
+      <?php endif; ?>
 
-    <?php get_component('menu/menu', [
-        'location' => 'header'
-    ]); ?>
+      <?php get_component('menu/menu', [
+          'location' => 'header'
+      ]); ?>
+    <?php endif; ?>
 
     <div class="<?php echo $header_css_class; ?>__content">
       <h1 class="<?php echo $header_css_class; ?>__title">

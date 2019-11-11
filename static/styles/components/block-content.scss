@@ -6,6 +6,7 @@
     [main-start] minmax(0, 82.4rem)
     [main-end] minmax(1rem, 1fr)
     [full-end];
+  min-height: 80vh;
 
   > * {
     grid-column: main;

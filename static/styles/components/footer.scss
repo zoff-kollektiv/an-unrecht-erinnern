@@ -8,7 +8,8 @@
   &__sm-container {
     align-self: flex-end;
     display: flex;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: 1.5rem;
   }
 
   &__sm-link {
@@ -26,10 +27,14 @@
   }
 
   .menu {
+    display: flex;
     list-style: none;
-    margin-bottom: 0;
-    margin-top: 0;
+    margin: 0 auto;
     padding-left: 0;
+
+    > * + * {
+      margin-left: 1.5rem;
+    }
   }
 
   .menu a {
