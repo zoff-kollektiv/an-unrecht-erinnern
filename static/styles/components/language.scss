@@ -1,0 +1,16 @@
+.language {
+  @include typo-footnotes;
+
+  background-color: rgba($color-dark-stone, .8);
+  border-radius: 0.1rem;
+  color: white;
+  line-height: 1;
+  padding: 0.35rem 0.5rem 0.2rem 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: darken( $color-dark-stone, 10% );
+  }
+}

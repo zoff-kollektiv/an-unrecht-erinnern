@@ -15,7 +15,7 @@ if (has_post_thumbnail()) {
           the_post(); ?>
 
   <header class="<?php echo $header_css_class; ?>">
-    <?php if(!is_front_page()) : ?>
+    <?php if (!is_front_page()): ?>
       <?php if (has_post_thumbnail()): ?>
           <div class="<?php echo $header_css_class; ?>__image-container">
             <?php the_post_thumbnail('header', [
@@ -28,6 +28,10 @@ if (has_post_thumbnail()) {
           'location' => 'header'
       ]); ?>
     <?php endif; ?>
+
+    <div class="<?php echo $header_css_class; ?>__language-switch-container">
+      <?php get_component('menu/languages'); ?>
+    </div>
 
     <div class="<?php echo $header_css_class; ?>__content">
       <h1 class="<?php echo $header_css_class; ?>__title">
