@@ -55,35 +55,32 @@ $ICON = [
 <?php if (have_rows('links')): ?>
   <ul class="wp-block-more">
     <?php while (have_rows('links')):
+
         the_row();
 
-        if( get_row_layout() == 'book' ) {
-          $link = get_sub_field(
-            'link'
-          );
-          $icon = $ICON['book'];
-          $title = get_sub_field(
-            'title'
-          );
-          $description = get_sub_field('description');
+        if (get_row_layout() == 'book') {
+            $link = get_sub_field('link');
+            $icon = $ICON['book'];
+            $title = get_sub_field('title');
+            $description = get_sub_field('description');
         } else {
-          $post_id = get_sub_field('link');
-          $post = get_post($post_id);
+            $post_id = get_sub_field('link');
+            $post = get_post($post_id);
 
-          $title = $post->post_title;
-          $description = $post->post_excerpt;
-          $link = get_permalink($post_id);
-          $icon = $ICON['internal'];
+            $title = $post->post_title;
+            $description = $post->post_excerpt;
+            $link = get_permalink($post_id);
+            $icon = $ICON['internal'];
         }
-    ?>
+        ?>
       <li>
-        <a href="<?php echo $link ?>" class="wp-block-more__item">
+        <a href="<?php echo $link; ?>" class="wp-block-more__item">
           <?php echo $icon; ?>
 
           <div class="wp-block-more__item-content-container">
-            <h3 class="wp-block-more__item-title"><?php echo $title ?></h3>
+            <h3 class="wp-block-more__item-title"><?php echo $title; ?></h3>
             <p class="wp-block-more__item-description">
-              <?php echo $description ?>
+              <?php echo $description; ?>
             </p>
           </div>
         </a>
