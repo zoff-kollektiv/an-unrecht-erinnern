@@ -15,10 +15,6 @@
     background-color: $color-red-dark;
   }
 
-  &:visited {
-    background-color: darken($color-red-dark, 15%);
-  }
-
   &__image {
     height: auto;
     max-width: 100%;
