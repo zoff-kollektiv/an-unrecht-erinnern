@@ -1,14 +1,19 @@
 .wp-block-gallery {
   background-color: $color-charcoal;
   color: $color-negative;
-  display: flex;
-  flex-wrap: nowrap;
-  list-style: none;
   margin: 0;
   overflow-y: hidden;
-  padding-left: 0;
   scroll-snap-type: x mandatory;
   width: 100%;
+
+  ul {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    width: 100%;
+  }
 
   li {
     display: flex;
