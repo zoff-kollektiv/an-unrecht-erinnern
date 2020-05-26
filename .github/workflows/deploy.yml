@@ -28,4 +28,5 @@ jobs:
         ftp-server: ${{ secrets.FTP_HOST }}
         ftp-username: ${{ secrets.FTP_USERNAME }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        git-ftp-args: --remote-root=/43173_unrecht_erinnern/wordpress/wp-content/themes/an-unrecht-erinnern/ --insecure
+        git-ftp-args: |
+          --insecure --remote-root=/43173_unrecht_erinnern/wordpress/wp-content/themes/an-unrecht-erinnern/
