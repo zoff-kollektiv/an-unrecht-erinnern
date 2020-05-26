@@ -56,6 +56,10 @@
               'post_type' => 'place',
           ]);
 
+          $places = array_filter($places, function($place) {
+            return !get_field('hide_in_navigation', $place->ID);
+          });
+
           foreach ($places as $place): ?>
             <li class="cards__item">
             <?php get_component('card/card', [
@@ -83,6 +87,10 @@
               'posts_per_page' => 100,
               'post_type' => 'topic',
           ]);
+
+          $topics = array_filter($topics, function($topic) {
+            return !get_field('hide_in_navigation', $topic->ID);
+          });
 
           foreach ($topics as $topic): ?>
             <li class="cards__item">

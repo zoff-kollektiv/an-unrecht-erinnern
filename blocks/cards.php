@@ -5,6 +5,11 @@ $posts = get_posts([
     'posts_per_page' => 100,
     'post_type' => $type['value'],
 ]);
+
+$posts = array_filter($posts, function($post) {
+return !get_field('hide_in_navigation', $post->ID);
+});
+
 ?>
 
 <section class="cards cards--<?php echo $type['value']; ?>">
