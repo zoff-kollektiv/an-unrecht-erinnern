@@ -21,9 +21,8 @@ jobs:
 
     - name: FTP-Deploy
       uses: gustavpursche/FTP-Deploy-Action@master
-      env:
-        FTP_SERVER: ${{ secrets.FTP_HOST }}
-        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        REMOTE_DIR: /43173_unrecht_erinnern/wordpress/wp-content/themes/an-unrecht-erinnern/
-        ARGS: --delete --exclude=node_modules/ --exclude=.git/ --exclude=.Icon
+      with:
+        ftp-server: ${{ secrets.FTP_HOST }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        git-ftp-args:
