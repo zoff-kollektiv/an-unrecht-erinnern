@@ -14,10 +14,10 @@
   "author": "Gustav Pursche <pursche@posteo.de>",
   "license": "ISC",
   "devDependencies": {
-    "@wordpress/scripts": "5.0.1"
+    "@wordpress/scripts": "^9.1.0"
   },
   "dependencies": {
-    "@wordpress/block-editor": "^3.2.3",
-    "@wordpress/rich-text": "^3.7.2"
+    "@wordpress/block-editor": "^3.11.0",
+    "@wordpress/rich-text": "^3.16.0"
   }
 }
