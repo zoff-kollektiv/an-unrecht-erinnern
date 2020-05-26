@@ -8,7 +8,10 @@ jobs:
     name: FTP-Deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+
     - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
@@ -20,7 +23,7 @@ jobs:
         npm run build --if-present
 
     - name: FTP-Deploy
-      uses: gustavpursche/FTP-Deploy-Action@master
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
         ftp-server: ${{ secrets.FTP_HOST }}
         ftp-username: ${{ secrets.FTP_USERNAME }}
