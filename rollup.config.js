@@ -16,22 +16,22 @@ const CONFIG = [
         files: ["./static/fonts/**/*"],
         dest: "./dist/fonts/",
         options: {
-          verbose: true
-        }
+          verbose: true,
+        },
       }),
 
       babel({
-        exclude: "node_modules/**"
+        exclude: "node_modules/**",
       }),
 
       postcss({
         extract: true,
         minimize: isProduction,
-        plugins: [autoprefixer()]
+        plugins: [autoprefixer()],
       }),
 
       resolve(),
-      commonjs()
+      commonjs(),
     ],
 
     input: "./static/index.js",
@@ -39,8 +39,8 @@ const CONFIG = [
     output: {
       file: "./dist/index.js",
       format: "iife",
-      sourcemap: isProduction ? false : "inline"
-    }
+      sourcemap: isProduction ? false : "inline",
+    },
   },
 
   {
@@ -48,11 +48,11 @@ const CONFIG = [
       postcss({
         extract: true,
         minimize: isProduction,
-        plugins: []
+        plugins: [],
       }),
 
       resolve(),
-      commonjs()
+      commonjs(),
     ],
 
     input: "./static/index-admin.js",
@@ -60,13 +60,13 @@ const CONFIG = [
     output: {
       file: "./dist/index-admin.js",
       format: "iife",
-      sourcemap: isProduction ? false : "inline"
-    }
-  }
+      sourcemap: isProduction ? false : "inline",
+    },
+  },
 ];
 
 if (isProduction) {
-  CONFIG.forEach(config => config.plugins.push(terser()));
+  CONFIG.forEach((config) => config.plugins.push(terser()));
 }
 
 export default CONFIG;

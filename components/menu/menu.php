@@ -25,7 +25,7 @@
           <?php
           $biographies = get_posts([
               'posts_per_page' => 100,
-              'post_type' => 'biography'
+              'post_type' => 'biography',
           ]);
 
           foreach ($biographies as $biography): ?>
@@ -33,7 +33,7 @@
               <?php get_component('card/card', [
                   'title' => $biography->post_title,
                   'permalink' => get_the_permalink($biography->ID),
-                  'id' => $biography->ID
+                  'id' => $biography->ID,
               ]); ?>
             </li>
 
@@ -53,7 +53,7 @@
           <?php
           $places = get_posts([
               'posts_per_page' => 100,
-              'post_type' => 'place'
+              'post_type' => 'place',
           ]);
 
           foreach ($places as $place): ?>
@@ -62,7 +62,7 @@
                 'title' => $place->post_title,
                 'description' => $place->post_excerpt,
                 'permalink' => get_the_permalink($place->ID),
-                'id' => $place->ID
+                'id' => $place->ID,
             ]); ?>
             </li>
           <?php endforeach;
@@ -81,7 +81,7 @@
           <?php
           $topics = get_posts([
               'posts_per_page' => 100,
-              'post_type' => 'topic'
+              'post_type' => 'topic',
           ]);
 
           foreach ($topics as $topic): ?>
@@ -90,7 +90,7 @@
                 'title' => $topic->post_title,
                 'description' => $topic->post_excerpt,
                 'permalink' => get_the_permalink($topic->ID),
-                'id' => $topic->ID
+                'id' => $topic->ID,
             ]); ?>
             </li>
           <?php endforeach;

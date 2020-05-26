@@ -12,7 +12,7 @@ $image_id = get_field('image');
     <div class="video__image-container">
       <?php echo wp_get_attachment_image($image_id, 'video', false, [
           'class' => 'video__image',
-          'loading' => 'lazy'
+          'loading' => 'lazy',
       ]); ?>
     </div>
 

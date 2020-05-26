@@ -15,7 +15,7 @@ class Tooltip
         wp_register_script(
             "tooltip-plugin",
             get_template_directory_uri() . $file,
-            array('wp-rich-text', 'wp-blocks', 'wp-element', 'wp-editor'),
+            ['wp-rich-text', 'wp-blocks', 'wp-element', 'wp-editor'],
             filemtime(get_template_directory() . $file)
         );
     }

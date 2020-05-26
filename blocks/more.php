@@ -45,7 +45,7 @@ $ICON = [
         </filter>
       </defs>
     </svg>
-  '
+  ',
 ]; ?>
 
 <hr class="hr" />

@@ -1,8 +1,8 @@
 <footer class="footer">
-  <?php wp_nav_menu(array(
+  <?php wp_nav_menu([
       'theme_location' => 'footer',
-      'container' => false
-  )); ?>
+      'container' => false,
+  ]); ?>
 
   <div class="footer__sm-container">
     <a href="https://facebook.com/" aria-label="Facebook" class="footer__sm-link">

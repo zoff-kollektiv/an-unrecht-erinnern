@@ -1,12 +1,12 @@
-const scrollToItem = item => {
+const scrollToItem = (item) => {
   item.scrollIntoView({ behavior: "smooth" });
 };
 
-export const init = gallery => {
+export const init = (gallery) => {
   const items = gallery.childNodes;
 
-  items.forEach(item =>
-    item.addEventListener("click", event => {
+  items.forEach((item) =>
+    item.addEventListener("click", (event) => {
       event.preventDefault();
 
       scrollToItem(event.currentTarget);

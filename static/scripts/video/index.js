@@ -1,7 +1,7 @@
 import getVideoId from "get-video-id";
 
-export const init = video => {
-  video.addEventListener("click", event => {
+export const init = (video) => {
+  video.addEventListener("click", (event) => {
     event.preventDefault();
 
     const embed = document.createElement("div");

@@ -2,7 +2,7 @@
 $languages = pll_the_languages([
     'hide_current' => true,
     'hide_empty' => false,
-    'raw' => true
+    'raw' => true,
 ]); ?>
 
 <?php foreach ($languages as $language): ?>

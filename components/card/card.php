@@ -1,6 +1,6 @@
 <a href="<?php echo $permalink; ?>" class="card">
   <?php echo get_the_post_thumbnail($id, 'card', [
-      'class' => 'card__image'
+      'class' => 'card__image',
   ]); ?>
 
   <div class="card__content">

@@ -16,5 +16,5 @@ registerFormatType("unrecht/tooltip", {
   title: "Tooltip",
   tagName: "button",
   className: "tooltip js-tooltip",
-  edit: TooltipButton
+  edit: TooltipButton,
 });

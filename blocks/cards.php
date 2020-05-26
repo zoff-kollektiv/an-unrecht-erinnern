@@ -3,7 +3,7 @@ $title = get_field('title');
 $type = get_field('type');
 $posts = get_posts([
     'posts_per_page' => 100,
-    'post_type' => $type['value']
+    'post_type' => $type['value'],
 ]);
 ?>
 
@@ -21,7 +21,7 @@ $posts = get_posts([
                 'description' =>
                     $type['value'] === 'biography' ? null : $post->post_excerpt,
                 'permalink' => get_the_permalink($post->ID),
-                'id' => $post->ID
+                'id' => $post->ID,
             ]); ?>
         </li>
         <?php endforeach;

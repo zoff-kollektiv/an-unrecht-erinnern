@@ -13,8 +13,8 @@ $BLOCKS = [
         'post_types' => ['page', 'biography', 'topic', 'place'],
         'mode' => 'auto',
         'supports' => [
-            'align' => false
-        ]
+            'align' => false,
+        ],
     ],
 
     [
@@ -27,8 +27,8 @@ $BLOCKS = [
         'post_types' => ['biography'],
         'mode' => 'auto',
         'supports' => [
-            'align' => false
-        ]
+            'align' => false,
+        ],
     ],
 
     [
@@ -41,8 +41,8 @@ $BLOCKS = [
         'post_types' => ['page', 'biography', 'topic', 'place'],
         'mode' => 'auto',
         'supports' => [
-            'align' => false
-        ]
+            'align' => false,
+        ],
     ],
 
     [
@@ -55,8 +55,8 @@ $BLOCKS = [
         'post_types' => ['page'],
         'mode' => 'auto',
         'supports' => [
-            'align' => false
-        ]
+            'align' => false,
+        ],
     ],
 
     [
@@ -69,9 +69,9 @@ $BLOCKS = [
         'post_types' => ['page', 'biography', 'topic', 'place'],
         'mode' => 'auto',
         'supports' => [
-            'align' => false
-        ]
-    ]
+            'align' => false,
+        ],
+    ],
 ];
 
 new Tooltip();
@@ -109,7 +109,7 @@ function allowed_block_types()
         'core/paragraph',
         'core/image',
         'core/gallery',
-        'core/quote'
+        'core/quote',
     ];
 
     return array_merge($acf_blocks, $allowed_core_blocks);
@@ -127,7 +127,7 @@ function create_post_types()
             'add_new_item' => 'Neue Biografie',
             'add_new' => 'Biografie erstellen',
             'edit_item' => 'Biografie bearbeiten',
-            'update_item' => 'Biografie aktualisieren'
+            'update_item' => 'Biografie aktualisieren',
         ],
         'supports' => ['title', 'excerpt', 'revisions', 'editor', 'thumbnail'],
         'public' => true,
@@ -142,8 +142,8 @@ function create_post_types()
         'rewrite' => [
             'slug' => 'biografien',
             'with_front' => false,
-            'feeds' => false
-        ]
+            'feeds' => false,
+        ],
     ]);
 
     register_post_type('topic', [
@@ -156,7 +156,7 @@ function create_post_types()
             'add_new_item' => 'Neues Thema',
             'add_new' => 'Thema erstellen',
             'edit_item' => 'Thema bearbeiten',
-            'update_item' => 'Thema aktualisieren'
+            'update_item' => 'Thema aktualisieren',
         ],
         'supports' => ['title', 'excerpt', 'revisions', 'editor', 'thumbnail'],
         'public' => true,
@@ -171,8 +171,8 @@ function create_post_types()
         'rewrite' => [
             'slug' => 'themen',
             'with_front' => false,
-            'feeds' => false
-        ]
+            'feeds' => false,
+        ],
     ]);
 
     register_post_type('place', [
@@ -185,7 +185,7 @@ function create_post_types()
             'add_new_item' => 'Neuer Ort',
             'add_new' => 'Ort erstellen',
             'edit_item' => 'Ort bearbeiten',
-            'update_item' => 'Ort aktualisieren'
+            'update_item' => 'Ort aktualisieren',
         ],
         'supports' => ['title', 'excerpt', 'revisions', 'editor', 'thumbnail'],
         'public' => true,
@@ -200,8 +200,8 @@ function create_post_types()
         'rewrite' => [
             'slug' => 'orte',
             'with_front' => false,
-            'feeds' => false
-        ]
+            'feeds' => false,
+        ],
     ]);
 }
 
@@ -219,10 +219,10 @@ function get_component($path, array $params = [])
 
 function register_custom_nav_menus()
 {
-    register_nav_menus(array(
+    register_nav_menus([
         'header' => 'Navigation',
-        'footer' => 'Footer'
-    ));
+        'footer' => 'Footer',
+    ]);
 }
 
 add_post_type_support('page', 'excerpt');
@@ -243,7 +243,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script(
         'styles',
         get_template_directory_uri() . '/dist/index.js',
-        array(),
+        [],
         filemtime(get_template_directory() . '/dist/index.js'),
         false
     );
