@@ -2,7 +2,7 @@
 
 $header_css_class = 'header';
 
-if (has_post_thumbnail()) {
+if (has_post_thumbnail() && !is_front_page()) {
     $header_css_class = 'hero';
 }
 ?>
