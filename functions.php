@@ -1,7 +1,5 @@
 <?php
 
-require_once 'plugin-tooltip/index.php';
-
 $BLOCKS = [
     [
         'name' => 'video',
@@ -73,8 +71,6 @@ $BLOCKS = [
         ],
     ],
 ];
-
-new Tooltip();
 
 function acf_block_render_callback($block)
 {
