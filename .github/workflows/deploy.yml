@@ -25,8 +25,8 @@ jobs:
     - name: FTP-Deploy
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ${{ secrets.FTP_HOST }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-server: sftp://sftp.raidboxes.io:22/
+        ftp-username: RB759997
         ftp-password: ${{ secrets.FTP_PASSWORD }}
         git-ftp-args: |
           --insecure --remote-root="/43173_unrecht_erinnern/wordpress/wp-content/themes/an-unrecht-erinnern/"
