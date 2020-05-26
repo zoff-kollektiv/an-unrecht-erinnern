@@ -19,11 +19,6 @@ jobs:
         npm install
         npm run build --if-present
 
-    - name: npm install, build Tooltip
-      run: |
-        npm install --prefix ./plugin-tooltip/
-        npm run build --if-present --prefix ./plugin-tooltip/
-
     - name: FTP-Deploy
       uses: gustavpursche/FTP-Deploy-Action@master
       env:
