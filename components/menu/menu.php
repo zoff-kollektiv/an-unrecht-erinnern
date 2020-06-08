@@ -35,7 +35,7 @@
                     'title' => $biography->post_title,
                     'permalink' => get_the_permalink($biography->ID),
                     'id' => $biography->ID,
-                    'image_size' => 'card-tall'
+                    'image_size' => 'card-tall',
                 ]); ?>
               </li>
 

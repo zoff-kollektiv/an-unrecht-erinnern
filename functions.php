@@ -134,7 +134,7 @@ function allowed_block_types()
         'core/image',
         'core/gallery',
         'core/quote',
-        'core-embed/vimeo'
+        'core-embed/vimeo',
     ];
 
     return array_merge($acf_blocks, $allowed_core_blocks);
@@ -357,7 +357,7 @@ function register_custom_nav_menus()
     ]);
 }
 
-add_action('after_setup_theme', function() {
+add_action('after_setup_theme', function () {
     add_image_size('card', 700, 350, true);
     add_image_size('card-tall', 700, 500, true);
     add_image_size('header', 2000, 833, true);
