@@ -24,12 +24,16 @@
   </h2>
 
   <ul class="blocks-gallery-grid">
-    <?php foreach(get_field('gallery') as $image_id) :
-      $image_caption = wp_get_attachment_caption($image_id);
-    ?>
+    <?php foreach (get_field('gallery') as $image_id):
+        $image_caption = wp_get_attachment_caption($image_id); ?>
       <li class="blocks-gallery-item">
         <figure>
-          <?php echo wp_get_attachment_image($image_id, 'large', false, null); ?>
+          <?php echo wp_get_attachment_image(
+              $image_id,
+              'large',
+              false,
+              null
+          ); ?>
 
           <?php if ($image_caption): ?>
             <figcaption>
@@ -38,6 +42,7 @@
           <?php endif; ?>
         </figure>
       </li>
-    <?php endforeach; ?>
+    <?php
+    endforeach; ?>
   </ul>
 </figure>
