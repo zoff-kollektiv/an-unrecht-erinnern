@@ -98,6 +98,20 @@ $BLOCKS = [
             'align' => false,
         ],
     ],
+
+    [
+        'name' => 'pupils-gallery',
+        'title' => __('Pupils Image Gallery'),
+        'render_callback' => 'acf_block_render_callback',
+        'category' => 'common',
+        'icon' => 'money',
+        'keywords' => ['image', 'gallery', 'pupils'],
+        'post_types' => ['page', 'biography', 'topic', 'place'],
+        'mode' => 'auto',
+        'supports' => [
+            'align' => false,
+        ],
+    ],
 ];
 
 function acf_block_render_callback($block)
