@@ -1,0 +1,26 @@
+.wp-block-embed {
+  grid-column: full;
+  margin: 4rem 0;
+
+  @include mq($from: tablet) {
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+  }
+
+  &__wrapper {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

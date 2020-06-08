@@ -1,15 +1,15 @@
+import Swiper from "swiper";
+
 const scrollToItem = (item) => {
   item.scrollIntoView({ behavior: "smooth" });
 };
 
 export const init = (gallery) => {
-  const items = gallery.childNodes;
+  return;
+  swiper = new Swiper(".wp-block-gallery", {
+    wrapperClass: "blocks-gallery-grid",
+    slideClass: "blocks-gallery-item",
 
-  items.forEach((item) =>
-    item.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      scrollToItem(event.currentTarget);
-    })
-  );
+    freeMode: true,
+  });
 };

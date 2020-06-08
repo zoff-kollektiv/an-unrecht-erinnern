@@ -70,6 +70,34 @@ $BLOCKS = [
             'align' => false,
         ],
     ],
+
+    [
+        'name' => 'map',
+        'title' => __('Map'),
+        'render_callback' => 'acf_block_render_callback',
+        'category' => 'common',
+        'icon' => 'admin-site-alt',
+        'keywords' => ['map'],
+        'post_types' => ['page', 'biography', 'topic', 'place'],
+        'mode' => 'auto',
+        'supports' => [
+            'align' => false,
+        ],
+    ],
+
+    [
+        'name' => 'portrait-image',
+        'title' => __('Portrait Image'),
+        'render_callback' => 'acf_block_render_callback',
+        'category' => 'common',
+        'icon' => 'admin-users',
+        'keywords' => ['image', 'portrait'],
+        'post_types' => ['page', 'biography', 'topic', 'place'],
+        'mode' => 'auto',
+        'supports' => [
+            'align' => false,
+        ],
+    ],
 ];
 
 function acf_block_render_callback($block)
@@ -106,6 +134,7 @@ function allowed_block_types()
         'core/image',
         'core/gallery',
         'core/quote',
+        'core-embed/vimeo'
     ];
 
     return array_merge($acf_blocks, $allowed_core_blocks);
@@ -216,11 +245,6 @@ function create_custom_fields()
                     'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
-                    'wrapper' => [
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ],
                     'message' => '',
                     'default_value' => 0,
                     'ui' => 0,
@@ -229,6 +253,63 @@ function create_custom_fields()
                 ],
             ],
             'location' => [
+                [
+                    [
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'topic',
+                    ],
+                ],
+                [
+                    [
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'place',
+                    ],
+                ],
+            ],
+            'menu_order' => 0,
+            'position' => 'side',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ]);
+
+        acf_add_local_field_group([
+            'key' => 'group_5ed60868b5967',
+            'title' => 'Header',
+            'fields' => [
+                [
+                    'key' => 'field_5ed6087f2565e',
+                    'label' => 'Header Bild',
+                    'name' => 'header_image',
+                    'type' => 'image',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'return_format' => 'id',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ],
+            ],
+            'location' => [
+                [
+                    [
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'biography',
+                    ],
+                ],
                 [
                     [
                         'param' => 'post_type',
@@ -275,6 +356,13 @@ function register_custom_nav_menus()
         'footer' => 'Footer',
     ]);
 }
+
+add_action('after_setup_theme', function() {
+    add_image_size('card', 700, 350, true);
+    add_image_size('card-tall', 700, 500, true);
+    add_image_size('header', 2000, 833, true);
+    add_image_size('video', 700, 700, true);
+});
 
 add_post_type_support('page', 'excerpt');
 add_theme_support('post-thumbnails');

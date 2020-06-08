@@ -4,14 +4,11 @@
   color: white;
   display: flex;
   flex-direction: column;
-  height: 50rem;
+  height: 45rem;
   justify-content: center;
+  margin-bottom: 3.5rem;
   position: relative;
   width: 100%;
-
-  @include mq($from: tablet) {
-    height: 42rem;
-  }
 
   &__language-switch-container {
     position: absolute;
@@ -48,14 +45,32 @@
     @include typo-title;
 
     margin-bottom: 0;
-    margin-top: 0;
+    margin-top: 2rem;
     text-align: center;
+
+    @include mq($until: tablet) {
+      hyphens: auto;
+      margin-top: 0;
+    }
   }
 
   &__excerpt {
     @include typo-body;
 
     font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.5rem;
+    max-width: 80rem;
     text-align: center;
+
+    @include mq($from: tablet) {
+      margin-top: 4rem;
+    }
+
+    > * {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
   }
 }

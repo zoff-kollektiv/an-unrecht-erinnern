@@ -3,7 +3,11 @@
 
   background-color: $color-transparent;
   padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
+
+  @include mq($from: tablet) {
+    padding-top: 2rem;
+  }
 
   &__list {
     display: flex;
@@ -31,9 +35,12 @@
   &__item {
     align-items: flex-end;
     display: flex;
-    padding-left: 2rem;
     min-width: 25rem;
     scroll-snap-align: start;
+
+    &:not(:first-child) {
+      padding-left: 2rem;
+    }
   }
 
   &__item-description {

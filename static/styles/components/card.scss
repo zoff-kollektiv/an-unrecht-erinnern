@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 20rem;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -17,10 +16,9 @@
 
   &__image {
     height: auto;
-    max-width: 100%;
-    min-height: 100%;
     mix-blend-mode: multiply;
-    object-fit: cover;
+    object-fit: contain;
+    width: 100%;
   }
 
   &__content {
@@ -30,6 +28,10 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+
+    @include mq($from: tablet) {
+      padding: 1.5rem;
+    }
   }
 
   &__title {

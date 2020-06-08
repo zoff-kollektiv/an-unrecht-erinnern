@@ -1,0 +1,12 @@
+.wp-block-map {
+  grid-column-start: full-start;
+  grid-column-end: full-end;
+
+  svg {
+    text {
+      font-family: $font-family;
+      font-size: 8rem;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,14 +1,19 @@
 .header-menu {
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-
   &__bars,
   &__close {
-    height: 2rem;
-    width: 2rem;
+    flex: 0 0 1.5rem;
+    height: 1.75rem;
+
+    @include mq($from: tablet) {
+      flex-basis: 1.75rem;
+      height: 1.85rem;
+    }
+  }
+
+  &__bars {
+    @include mq($from: tablet) {
+      margin-right: 0.5rem;
+    }
   }
 
   &[open] &__bars {
@@ -28,22 +33,24 @@
     font-size: 0;
     line-height: 1;
     list-style: none;
-    margin-left: 2rem;
-    margin-top: 2rem;
     outline: none;
     position: relative;
     user-select: none;
-    width: 10rem;
+    width: 6.5rem;
     z-index: 11;
+
+    @include mq($from: tablet) {
+      width: 8rem;
+    }
 
     ::-webkit-details-marker,
     ::marker {
       display: none;
     }
 
-    &:hover,
-    &:focus {
-      color: $color-red-dark;
+    &:hover &-label,
+    &:focus &-label {
+      text-decoration: underline;
     }
 
     // Safari workaround 9.3.a https://github.com/philipwalton/flexbugs
@@ -55,10 +62,16 @@
 
   &__toggle-label {
     font-family: $font-family;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 500;
     line-height: 1;
     margin-left: 0.5rem;
+    position: relative;
+    top: 0.15rem;
+
+    @include mq($from: tablet) {
+      font-size: 2rem;
+    }
   }
 
   &[open] &__toggle-label {

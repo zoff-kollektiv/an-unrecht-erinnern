@@ -2,7 +2,12 @@
   @include typo-intro;
 
   color: $color-dark-stone;
-  margin-bottom: 10rem;
-  margin-top: 10rem;
+  margin-bottom: 6rem;
+  margin-top: 6rem;
   text-align: center;
+
+  @include mq($from: tablet) {
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+  }
 }

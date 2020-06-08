@@ -5,21 +5,61 @@
   background-color: $color-charcoal;
   color: $color-negative;
   margin: 0;
-  padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding: 3.5rem 2rem;
   width: 100%;
 
   > img {
     grid-column: full;
     height: auto;
-    max-height: 95vh;
+    max-height: 75vh;
     object-fit: contain;
     width: 100%;
+
+    @include mq($from: tablet) {
+      max-height: 95vh;
+    }
+  }
+
+  &--is-portrait > img {
+    @include mq($from: tablet) {
+      grid-column: main;
+      grid-row: 1;
+      width: 50%;
+    }
+
+    @include mq($from: desktop) {
+      width: 75%;
+    }
   }
 
   > figcaption {
     @include typo-footnotes;
 
-    grid-column: main;
+    grid-column: full;
+
+    @include mq($from: tablet) {
+      grid-column: main;
+    }
+  }
+
+  &--is-portrait > figcaption {
+    @include mq($from: tablet) {
+      grid-column: main;
+      grid-row: 1;
+      margin-left: calc(50% + 1.5rem);
+      width: 50%;
+    }
+
+    @include mq($from: desktop) {
+      margin-left: calc(75% + 2.5rem);
+      width: calc(25% + 5rem);
+    }
+  }
+
+  .video + &,
+  .wp-block-image + &,
+  .wp-block-gallery + & {
+    border-top: 1px dashed $color-negative;
+    margin-top: -2rem;
   }
 }

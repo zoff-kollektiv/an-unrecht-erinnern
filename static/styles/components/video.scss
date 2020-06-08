@@ -1,12 +1,12 @@
 .video {
   @include block-content;
 
-  padding-top: 10rem;
   text-decoration: none;
 
   @include mq($from: tablet) {
     background-color: $color-charcoal;
     color: $color-negative;
+    padding-top: 8rem;
   }
 
   &--embed-active {
@@ -63,11 +63,13 @@
   &__content {
     margin-bottom: auto;
     margin-top: auto;
+    padding-bottom: 2.5rem;
     padding-left: 3rem;
     padding-right: 3rem;
-    padding-top: 1rem;
+    padding-top: 2.5rem;
 
     @include mq($from: tablet) {
+      padding-bottom: 0;
       padding-left: 2rem;
       padding-right: 0;
       padding-top: 0;
@@ -122,7 +124,8 @@
     @include typo-body;
 
     font-weight: 500;
-    margin-bottom: 0;
+    line-height: 1.2;
+    margin-bottom: 1rem;
     margin-top: 0;
   }
 
@@ -135,5 +138,12 @@
 
   .embed {
     grid-column: main;
+  }
+
+  .video,
+  .wp-block-image + &,
+  .wp-block-gallery + & {
+    border-top: 1px dashed $color-negative;
+    margin-top: -2rem;
   }
 }

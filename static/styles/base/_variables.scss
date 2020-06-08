@@ -9,3 +9,10 @@ $color-dark-stone: #535353;
 $color-paper: #FDFCFC;
 $color-negative: #949494;
 $color-transparent: #F2F2F2;
+
+$mq-breakpoints: (
+    mobile:  500px,
+    tablet:  740px,
+    desktop: 980px,
+    wide:    1300px
+);

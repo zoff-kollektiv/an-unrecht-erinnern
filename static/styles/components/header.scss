@@ -4,7 +4,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 8rem 2rem;
     position: relative;
     text-align: center;
     z-index: 2;
@@ -13,7 +13,7 @@
   &__language-switch-container {
     position: absolute;
     right: 2rem;
-    top: 2rem;
+    top: 1.5rem;
     z-index: 11;
   }
 

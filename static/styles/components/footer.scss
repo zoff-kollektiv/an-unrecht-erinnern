@@ -5,6 +5,10 @@
   justify-content: center;
   margin-top: 4rem;
 
+  @include mq($from: tablet) {
+    margin-top: 8rem;
+  }
+
   &__sm-container {
     align-self: flex-end;
     display: flex;

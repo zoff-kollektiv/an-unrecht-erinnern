@@ -9,7 +9,7 @@ if (has_post_thumbnail() && !is_front_page()) {
 
 <?php get_header(); ?>
 
-<main class="main">
+<div class="main">
   <?php if (have_posts()):
       while (have_posts()):
           the_post(); ?>
@@ -18,9 +18,23 @@ if (has_post_thumbnail() && !is_front_page()) {
     <?php if (!is_front_page()): ?>
       <?php if (has_post_thumbnail()): ?>
           <div class="<?php echo $header_css_class; ?>__image-container">
-            <?php the_post_thumbnail('header', [
+            <?php
+            $header_image = get_field('header_image');
+            $image_attrs = [
                 'class' => $header_css_class . '__image',
-            ]); ?>
+            ];
+
+            if ($header_image) {
+                echo wp_get_attachment_image(
+                    $header_image,
+                    'header',
+                    false,
+                    $image_attrs
+                );
+            } else {
+                the_post_thumbnail('header', $image_attrs);
+            }
+            ?>
           </div>
       <?php endif; ?>
 
@@ -44,12 +58,12 @@ if (has_post_thumbnail() && !is_front_page()) {
     </div>
   </header>
 
-  <div class="block-content">
+  <main class="block-content">
     <?php the_content();
       endwhile;
   endif; ?>
-  </div>
-</main>
+  </main>
+</div>
 
 <?php get_footer(); ?>
 
