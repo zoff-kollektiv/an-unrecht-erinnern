@@ -107,3 +107,16 @@
     [main-end] minmax(0.75rem, 1fr)
     [full-end];
 }
+
+@mixin long-dashed-border {
+  &::before {
+    background-image: linear-gradient(to right, $color-negative 70%, transparent 30%);
+    background-position: left top;
+    background-repeat: repeat-x;
+    background-size: 2rem 0.2rem;
+    content: '';
+    display: block;
+    grid-column: full;
+    height: 0.2rem;
+  }
+}

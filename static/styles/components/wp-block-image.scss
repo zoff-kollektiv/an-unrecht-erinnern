@@ -56,10 +56,18 @@
     }
   }
 
-  .video + &,
   .wp-block-image + &,
   .wp-block-gallery + & {
-    border-top: 1px dashed $color-negative;
+    @include long-dashed-border;
+
     margin-top: -2rem;
+  }
+
+  .video + & {
+    margin-top: -2rem;
+
+    @include mq($from: tablet) {
+      @include long-dashed-border;
+    }
   }
 }
