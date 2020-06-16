@@ -20,7 +20,15 @@
       </defs>
     </svg>
 
-    <?php the_field('title'); ?>
+    <?php
+    $title = get_field('title');
+
+    if ($title) {
+        echo $title;
+    } else {
+        echo 'Beiträge';
+    }
+    ?>
   </h2>
 
   <ul class="blocks-gallery-grid">
