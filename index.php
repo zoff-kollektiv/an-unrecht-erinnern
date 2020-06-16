@@ -37,11 +37,11 @@ if (has_post_thumbnail() && !is_front_page()) {
             ?>
           </div>
       <?php endif; ?>
-
-      <?php get_component('menu/menu', [
-          'location' => 'header',
-      ]); ?>
     <?php endif; ?>
+
+    <?php get_component('menu/menu', [
+        'location' => 'header',
+    ]); ?>
 
     <div class="<?php echo $header_css_class; ?>__language-switch-container">
       <?php get_component('menu/languages'); ?>

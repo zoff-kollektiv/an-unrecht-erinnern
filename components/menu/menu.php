@@ -111,5 +111,7 @@
     </ul>
   </details>
 
-  <a href="/" class="header-menu-container__home-link">Startseite</a>
+  <?php if (!is_front_page()): ?>
+    <a href="/" class="header-menu-container__home-link">Startseite</a>
+  <?php endif; ?>
 </div>
