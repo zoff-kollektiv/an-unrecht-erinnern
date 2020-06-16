@@ -7,11 +7,11 @@
     grid-column: main;
   }
 
-  > .wp-block-gallery, > .wp-block-image, > .wp-block-vita, > .hr {
+  > .wp-block-gallery, > .wp-block-image, > .wp-block-vita, > .hr, > .wp-block-vita {
     grid-column: full;
   }
 
-  > *:first-child:not(p):not(.wp-block-embed-vimeo):not(.intro) {
+  > *:first-child:not(p):not(.wp-block-embed-vimeo):not(.intro):not(.wp-block-vita) {
     margin-top: -3.5rem;
   }
 

@@ -26,7 +26,8 @@ $posts = array_filter($posts, function ($post) {
                     $type['value'] === 'biography' ? null : $post->post_excerpt,
                 'permalink' => get_the_permalink($post->ID),
                 'id' => $post->ID,
-                'image_size' => $type['value'] === 'biography' ? 'card-tall' : null,
+                'image_size' =>
+                    $type['value'] === 'biography' ? 'card-tall' : null,
             ]); ?>
         </li>
         <?php endforeach;
