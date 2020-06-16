@@ -27,12 +27,13 @@
     }
 
     svg {
-      bottom: 0;
+      bottom: -0.35rem;
       left: 0;
       position: absolute;
       width: 10rem;
 
       @include mq($from: tablet) {
+        bottom: -0.55rem;
         width: 14rem;
       }
     }

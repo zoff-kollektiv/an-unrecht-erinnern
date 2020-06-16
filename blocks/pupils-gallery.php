@@ -1,24 +1,19 @@
 <figure class="wp-block-gallery">
   <h2 class="wp-block-gallery__title">
-    <svg viewBox="0 0 149 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g filter="url(#filter0_d)">
-        <path d="M40 13a3 3 0 013-3h65a3 3 0 013 3v32a3 3 0 01-3 3H43a3 3 0 01-3-3V13z" fill="#2B2B2B"/>
-        <circle cx="47" cy="17" r="3.25" fill="#2B2B2B" stroke="#E0E0E0" stroke-width="1.5"/>
-        <path d="M27.77 64.5H.74c-.1 0 19.58-36.42 22.24-40.97a1 1 0 01.92-.5l33.87 1.94a1 1 0 01.95 1v3.12a1 1 0 01-1 1h-15.2l21.36 1.94a1 1 0 01.9 1v2.17a1 1 0 01-.95 1l-21.3.97 21.35 1.94a1 1 0 01.9 1v3.15a1 1 0 01-1 1H42.53l17.33 1.92a1 1 0 01.89 1v2.15a1 1 0 01-1 1H37.03a1 1 0 00-.87.5L27.77 64.5zM121.23 64.5h27.03l-22.32-41.1a1 1 0 00-.69-.48L92.8 17.14a1 1 0 00-1.1.6l-1 2.37a1 1 0 00.6 1.33l18.78 6.52-.24 1.94-24.7 2.13a1 1 0 00-.92 1v2.17a1 1 0 00.96 1l21.3.97-21.35 1.94a1 1 0 00-.9 1v3.15a1 1 0 001 1h21.26l-17.33 1.92a1 1 0 00-.89 1v2.15a1 1 0 001 1h22.71c.36 0 .87.5.87.5l8.39 13.67z" fill="#E0E0E0"/>
-      </g>
+  <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 160 68" xml:space="preserve">
+    <defs>
+      <filter id="drop-shadow" x="0" y="0">
+        <feOffset result="offOut" in="SourceAlpha" dx="0" dy="0" />
+        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="2" />
+        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+    </defs>
 
-      <defs>
-        <filter id="filter0_d" x="30" y="0" width="91" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-          <feOffset/>
-          <feGaussianBlur stdDeviation="5"/>
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
-          <feBlend mode="multiply" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-        </filter>
-      </defs>
-    </svg>
+    <style>.st2{fill:#e0e0e0}</style>
+    <path d="M45.4 9.6a3 3 0 013-3h65a3 3 0 013 3v32a3 3 0 01-3 3h-65a3 3 0 01-3-3v-32z" fill="#2b2b2b" filter="url(#drop-shadow)" />
+    <circle cx="52.4" cy="13.6" r="3.2" fill="#2b2b2b" stroke="#e0e0e0" stroke-width="1.5"/>
+    <path class="st2" d="M33.1 61.1h-27l22.2-41c.2-.3.5-.5.9-.5l33.9 1.9c.5 0 .9.5.9 1v3.1c0 .6-.4 1-1 1H47.9l21.4 1.9c.5 0 .9.5.9 1v2.2c0 .5-.4 1-1 1l-21.3 1 21.4 1.9c.5 0 .9.5.9 1v3.1c0 .6-.4 1-1 1H47.9l17.3 1.9c.5.1.9.5.9 1v2.2c0 .6-.4 1-1 1H42.4a1 1 0 00-.9.5l-8.4 13.8zM126.6 61.1h27L131.3 20c-.1-.3-.4-.4-.7-.5l-32.5-5.8c-.5-.1-.9.2-1.1.6l-1 2.4a1 1 0 00.6 1.3l18.8 6.5-.2 1.9-24.7 2.1c-.5 0-.9.5-.9 1v2.2c0 .5.4 1 1 1l21.3 1-21.4 1.9c-.5 0-.9.5-.9 1v3.1c0 .6.4 1 1 1h21.3l-17.3 1.9c-.5.1-.9.5-.9 1v2.2c0 .6.4 1 1 1h22.7c.4 0 .9.5.9.5l8.3 13.8z" filter="url(#drop-shadow)" />
+  </svg>
 
     <?php
     $title = get_field('title');
