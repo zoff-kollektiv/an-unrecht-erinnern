@@ -21,10 +21,6 @@
     @include mq($from: tablet) {
       grid-template-columns: repeat(3, 1fr);
     }
-
-    @include mq($from: desktop) {
-      grid-template-columns: repeat(4, 1fr);
-    }
   }
 
   &__item {
