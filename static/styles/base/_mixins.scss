@@ -13,6 +13,10 @@
   font-feature-settings: 'pnum' on, 'onum' on;
   font-size: 1.8rem;
   line-height: 1.66;
+
+  @include mq($from: tablet) {
+    font-size: 1.6rem;
+  }
 }
 
 @mixin typo-intro {

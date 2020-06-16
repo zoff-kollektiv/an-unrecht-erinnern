@@ -1,19 +1,26 @@
 .footer {
+  align-items: center;
   background-color: $color-red-light;
   color: white;
   display: flex;
   justify-content: center;
   margin-top: 4rem;
+  padding-bottom: 1.25rem;
+  padding-top: 1.25rem;
 
   @include mq($from: tablet) {
     margin-top: 8rem;
   }
 
   &__sm-container {
-    align-self: flex-end;
     display: flex;
-    margin-left: auto;
+    justify-self: flex-end;
     margin-right: 1.5rem;
+
+    a {
+      font-size: 0;
+      line-height: 1;
+    }
   }
 
   &__sm-link {
@@ -32,12 +39,16 @@
 
   .menu {
     display: flex;
+    flex: 1;
+    justify-content: center;
     list-style: none;
-    margin: 0 auto;
+    margin: 0;
     padding-left: 0;
 
     > * + * {
-      margin-left: 1.5rem;
+      border-left: 2px solid #750000;
+      margin-left: 0.5rem;
+      padding-left: 0.5rem;
     }
   }
 
@@ -46,8 +57,9 @@
 
     display: block;
     font-weight: 700;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
+    line-height: 1;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     text-decoration: none;
 
     &:hover,
