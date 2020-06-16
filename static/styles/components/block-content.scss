@@ -15,6 +15,10 @@
     margin-top: -3.5rem;
   }
 
+  > *.wp-block-vita:first-child {
+    margin-top: -1.5rem;
+  }
+
   > p {
     @include typo-body;
 
