@@ -13,10 +13,7 @@ export const init = (video) => {
     const iframe = document.createElement("iframe");
     const { id: videoId } = getVideoId(video.href);
 
-    iframe.setAttribute(
-      "src",
-      `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&modestbranding=1&showinfo=0&controls=0`
-    );
+    iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}`);
 
     iframe.setAttribute("allow", "autoplay; fullscreen");
     iframe.setAttribute("frameborder", "0");
