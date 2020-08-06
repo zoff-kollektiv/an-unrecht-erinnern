@@ -45,9 +45,12 @@ $ICON = [
 
           <div class="wp-block-more__item-content-container">
             <h3 class="wp-block-more__item-title"><?php echo $title; ?></h3>
-            <p class="wp-block-more__item-description">
-              <?php echo $description; ?>
-            </p>
+
+            <?php if(strlen(trim($description)) >= 1) : ?>
+              <p class="wp-block-more__item-description">
+                <?php echo $description; ?>
+              </p>
+            <?php endif; ?>
           </div>
         </a>
       </li>

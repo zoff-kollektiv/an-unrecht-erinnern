@@ -3,11 +3,11 @@
   padding-left: 0;
 
   > * + * {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
 
   &__item {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     text-decoration: none;
 
@@ -49,6 +49,7 @@
   &__item-description {
     @include typo-footnotes;
 
+    margin-bottom: 0;
     margin-top: 0.5rem;
   }
 }
