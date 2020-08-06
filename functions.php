@@ -382,6 +382,7 @@ add_action('after_setup_theme', function () {
     add_image_size('card-tall', 700, 500, true);
     add_image_size('header', 2000, 833, true);
     add_image_size('video', 700, 700, true);
+    add_image_size('camp', 4000, 0, false);
 });
 
 add_post_type_support('page', 'excerpt');
