@@ -400,14 +400,35 @@ add_action(
 );
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script(
+    wp_enqueue_style(
         'styles',
+        get_template_directory_uri() . '/dist/index.css',
+        [],
+        filemtime(get_template_directory() . '/dist/index.css'),
+        false
+    );
+
+    wp_enqueue_script(
+        'scripts',
         get_template_directory_uri() . '/dist/index.js',
         [],
         filemtime(get_template_directory() . '/dist/index.js'),
-        false
+        true
     );
 });
+
+add_filter(
+    'script_loader_tag',
+    function ($tag, $handle, $src) {
+        if ($handle !== 'scripts') {
+            return $tag;
+        }
+
+        return "<script src='$src' async></script>";
+    },
+    10,
+    3
+);
 
 add_action('init', function () {
     create_post_types();
