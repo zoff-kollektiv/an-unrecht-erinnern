@@ -25,7 +25,6 @@
   &__item > svg {
     flex: 0 0 2.5rem;
     height: auto;
-    margin-top: 0.95rem;
     max-height: 100%;
 
     @include mq($from: tablet) {
