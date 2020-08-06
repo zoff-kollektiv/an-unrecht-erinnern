@@ -27,6 +27,8 @@
             $biographies = get_posts([
                 'posts_per_page' => 100,
                 'post_type' => 'biography',
+                'orderby' => 'menu_order',
+                'order' => 'ASC',
             ]);
 
             foreach ($biographies as $biography): ?>
@@ -56,6 +58,8 @@
             $places = get_posts([
                 'posts_per_page' => 100,
                 'post_type' => 'place',
+                'orderby' => 'menu_order',
+                'order' => 'ASC',
             ]);
 
             $places = array_filter($places, function ($place) {
@@ -88,6 +92,8 @@
             $topics = get_posts([
                 'posts_per_page' => 100,
                 'post_type' => 'topic',
+                'orderby' => 'menu_order',
+                'order' => 'ASC',
             ]);
 
             $topics = array_filter($topics, function ($topic) {

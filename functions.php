@@ -185,7 +185,7 @@ function create_post_types()
         ],
     ]);
 
-    add_post_type_support( 'biography', 'page-attributes' );
+    add_post_type_support('biography', 'page-attributes');
 
     register_post_type('topic', [
         'labels' => [
@@ -216,7 +216,7 @@ function create_post_types()
         ],
     ]);
 
-    add_post_type_support( 'topic', 'page-attributes' );
+    add_post_type_support('topic', 'page-attributes');
 
     register_post_type('place', [
         'labels' => [
@@ -247,7 +247,7 @@ function create_post_types()
         ],
     ]);
 
-    add_post_type_support( 'place', 'page-attributes' );
+    add_post_type_support('place', 'page-attributes');
 }
 
 function create_custom_fields()

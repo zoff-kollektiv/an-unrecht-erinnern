@@ -4,6 +4,8 @@ $type = get_field('type');
 $posts = get_posts([
     'posts_per_page' => 100,
     'post_type' => $type['value'],
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
 ]);
 
 $posts = array_filter($posts, function ($post) {
