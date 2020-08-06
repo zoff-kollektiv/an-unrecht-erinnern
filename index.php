@@ -60,7 +60,7 @@ if (has_post_thumbnail() && !is_front_page()) {
 
   <?php if (is_front_page()): ?>
     <?php the_post_thumbnail('camp', [
-      'class' => 'camp-image'
+        'class' => 'camp-image',
     ]); ?>
   <?php endif; ?>
 

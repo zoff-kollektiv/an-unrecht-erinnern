@@ -15,9 +15,9 @@
   }
 
   &__image {
-    height: auto;
+    height: 100%;
     mix-blend-mode: multiply;
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
   }
 
