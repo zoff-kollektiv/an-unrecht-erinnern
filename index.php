@@ -58,18 +58,18 @@ if (has_post_thumbnail() && !is_front_page()) {
     </div>
   </header>
 
+  <?php if (is_front_page()): ?>
+    <img src="<?php bloginfo(
+        'template_directory'
+    ); ?>/static/images/camp-empty.png" class="camp-image" />
+  <?php endif; ?>
+
   <main class="block-content">
     <?php the_content();
       endwhile;
   endif; ?>
   </main>
 </div>
-
-<?php if (is_front_page()): ?>
-  <img src="<?php bloginfo(
-      'template_directory'
-  ); ?>/static/images/camp-empty.png" class="fixed-image" />
-<?php endif; ?>
 
 <?php get_footer(); ?>
 
