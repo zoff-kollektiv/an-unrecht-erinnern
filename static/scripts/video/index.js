@@ -13,7 +13,10 @@ export const init = (video) => {
     const iframe = document.createElement("iframe");
     const { id: videoId } = getVideoId(video.href);
 
-    iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}?autoplay=1`);
+    iframe.setAttribute(
+      "src",
+      `https://player.vimeo.com/video/${videoId}?autoplay=1`
+    );
 
     iframe.setAttribute("allow", "autoplay; fullscreen");
     iframe.setAttribute("frameborder", "0");
