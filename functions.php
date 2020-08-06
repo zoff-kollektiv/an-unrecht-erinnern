@@ -185,6 +185,8 @@ function create_post_types()
         ],
     ]);
 
+    add_post_type_support( 'biography', 'page-attributes' );
+
     register_post_type('topic', [
         'labels' => [
             'name' => 'Themen',
@@ -214,6 +216,8 @@ function create_post_types()
         ],
     ]);
 
+    add_post_type_support( 'topic', 'page-attributes' );
+
     register_post_type('place', [
         'labels' => [
             'name' => 'Orte',
@@ -242,6 +246,8 @@ function create_post_types()
             'feeds' => false,
         ],
     ]);
+
+    add_post_type_support( 'place', 'page-attributes' );
 }
 
 function create_custom_fields()
