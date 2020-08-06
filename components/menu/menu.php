@@ -1,4 +1,4 @@
-<div class="header-menu-container">
+<div class="header-menu-container js-menu">
   <details class="<?php echo $location; ?>-menu">
     <summary class="<?php echo $location; ?>-menu__toggle">
       <div>

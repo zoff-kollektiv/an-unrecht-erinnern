@@ -3,12 +3,18 @@
   display: flex;
   flex-wrap: nowrap;
   left: 0;
+  padding-bottom: 1rem;
   padding-left: 2rem;
   padding-top: 2rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 10;
   width: 100%;
+
+  &.headroom--pinned:not(.headroom--top) {
+    background-color: $color-red-light;
+    padding-top: 1rem;
+  }
 
   &__home-link {
     border-left: 2px solid currentColor;
