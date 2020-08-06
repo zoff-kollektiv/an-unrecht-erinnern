@@ -20,10 +20,16 @@
     }
   }
 
+  &--is-portrait {
+    @include mq($from: tablet) {
+      grid-template-rows: auto;
+    }
+  }
+
   &--is-portrait > img {
     @include mq($from: tablet) {
       grid-column: main;
-      grid-row: 1;
+      grid-row: 2;
       width: 50%;
     }
 
@@ -45,7 +51,7 @@
   &--is-portrait > figcaption {
     @include mq($from: tablet) {
       grid-column: main;
-      grid-row: 1;
+      grid-row: 2;
       margin-left: calc(50% + 1.5rem);
       width: 50%;
     }
@@ -68,6 +74,14 @@
 
     @include mq($from: tablet) {
       @include long-dashed-border;
+    }
+  }
+
+  .video + &--is-portrait {
+    &:before {
+      @include mq($from: tablet) {
+        grid-row: 1;
+      }
     }
   }
 }
