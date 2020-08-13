@@ -1,0 +1,17 @@
+.wp-block-long-quote {
+  @include typo-zitat();
+
+  padding-left: 2rem;
+
+  @include mq($from: tablet) {
+    padding-left: 4rem;
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -112,6 +112,20 @@ $BLOCKS = [
             'align' => false,
         ],
     ],
+
+    [
+        'name' => 'long-quote',
+        'title' => __('Long Quote'),
+        'render_callback' => 'acf_block_render_callback',
+        'category' => 'common',
+        'icon' => 'format-quote',
+        'keywords' => ['quote', 'long'],
+        'post_types' => ['page', 'biography', 'topic', 'place'],
+        'mode' => 'auto',
+        'supports' => [
+            'align' => false,
+        ],
+    ],
 ];
 
 function acf_block_render_callback($block)
