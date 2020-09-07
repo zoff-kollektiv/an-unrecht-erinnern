@@ -84,8 +84,7 @@
     @include mq($until: tablet) {
       position: absolute;
       right: 3rem;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 25%;
     }
   }
 

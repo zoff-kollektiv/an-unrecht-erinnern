@@ -3,7 +3,11 @@
   padding-left: 0;
 
   > * + * {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
+
+    @include mq($from: tablet) {
+      margin-top: 2.5rem;
+    }
   }
 
   &__item {
@@ -33,7 +37,11 @@
   }
 
   &__item-content-container {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
+
+    @include mq($from: desktop) {
+      margin-left: 1.5rem;
+    }
   }
 
   &__item-title {

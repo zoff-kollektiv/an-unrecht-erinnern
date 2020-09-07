@@ -21,8 +21,13 @@
 
 @mixin typo-intro {
   font-family: $font-family;
-  font-size: 2rem;
-  line-height: 2;
+  font-size: 1.75rem;
+  line-height: 1.5;
+
+  @include mq($from: tablet) {
+    font-size: 2rem;
+    line-height: 2;
+  }
 }
 
 @mixin typo-title {

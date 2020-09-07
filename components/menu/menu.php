@@ -15,7 +15,7 @@
       </div>
     </summary>
 
-    <ul class="<?php echo $location; ?>-menu__inner">
+    <ul class="<?php echo $location; ?>-menu__inner" data-scroll-lock-scrollable>
       <li class="<?php echo $location; ?>-menu__block">
         <div class="cards">
           <h2 class="cards__title">

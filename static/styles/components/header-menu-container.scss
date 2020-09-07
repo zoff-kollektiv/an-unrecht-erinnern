@@ -25,7 +25,6 @@
     margin-left: 1rem;
     padding-left: 1rem;
     position: relative;
-    top: 0.15rem;
     text-decoration: none;
 
     &:hover,
@@ -36,5 +35,9 @@
     @include mq($from: tablet) {
       font-size: 2rem;
     }
+  }
+
+  .header-menu-container--is-open &__home-link {
+    color: #828282;
   }
 }
