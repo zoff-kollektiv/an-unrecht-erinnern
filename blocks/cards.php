@@ -38,7 +38,7 @@ $posts = array_filter($posts, function ($post) {
 
     </ul>
 
-    <?php if ($type['value'] === 'biography') : ?>
+    <?php if ($type['value'] === 'biography'): ?>
         <?php get_component('take-part/take-part', [
             'id' => 'cards',
             'linked_page' => '/macht-mit/',

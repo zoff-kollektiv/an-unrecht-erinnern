@@ -3,6 +3,7 @@
   background-color: $color-red-light;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: 4rem;
   padding-bottom: 1.25rem;
@@ -11,6 +12,7 @@
   z-index: 2;
 
   @include mq($from: tablet) {
+    flex-direction: row;
     margin-top: 8rem;
   }
 
@@ -42,15 +44,34 @@
   .menu {
     display: flex;
     flex: 1;
+    flex-direction: column;
     justify-content: center;
     list-style: none;
-    margin: 0;
+    margin: 0 0 2rem 0;
     padding-left: 0;
+    text-align: center;
+    width: 100%;
+
+    @include mq($from: tablet) {
+      flex-direction: row;
+      margin-bottom: 0;
+      text-align: left;
+      width: auto;
+    }
 
     > * + * {
-      border-left: 2px solid #750000;
-      margin-left: 0.5rem;
-      padding-left: 0.5rem;
+      border-top: 1px solid #750000;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+
+      @include mq($from: tablet) {
+        border-left: 2px solid #750000;
+        border-top: 0;
+        margin-left: 0.5rem;
+        margin-top: 0;
+        padding-left: 0.5rem;
+        padding-top: 0;
+      }
     }
   }
 
