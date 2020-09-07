@@ -11,7 +11,7 @@
   }
 
   &__item {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     text-decoration: none;
 
@@ -27,12 +27,13 @@
   }
 
   &__item > svg {
-    flex: 0 0 2.5rem;
+    flex: 0 0 3rem;
     height: auto;
     max-height: 100%;
+    transform: translateY(-25%);
 
     @include mq($from: tablet) {
-      flex-basis: 4.5rem;
+      flex-basis: 4rem;
     }
   }
 
