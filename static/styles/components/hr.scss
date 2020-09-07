@@ -4,4 +4,10 @@
   border-top: 1px dashed #E0E0E0;
   height: 1px;
   width: 100%;
+
+  .video + &,
+  .wp-block-image,
+  .wp-block-gallery + & {
+    display: none;
+  }
 }

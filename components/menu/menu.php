@@ -44,6 +44,11 @@
             <?php endforeach;
             ?>
           </ul>
+
+          <?php get_component('take-part/take-part', [
+              'id' => 'menu',
+              'linked_page' => '/macht-mit/',
+          ]); ?>
         </div>
       </li>
 

@@ -13,7 +13,7 @@ $posts = array_filter($posts, function ($post) {
 });
 ?>
 
-<section class="cards cards--<?php echo $type['value']; ?>">
+<div class="cards cards--<?php echo $type['value']; ?>">
     <h2 class="cards__title">
         <?php echo $title; ?>
     </h2>
@@ -37,4 +37,11 @@ $posts = array_filter($posts, function ($post) {
     ?>
 
     </ul>
-</section>
+
+    <?php if ($type['value'] === 'biography') : ?>
+        <?php get_component('take-part/take-part', [
+            'id' => 'cards',
+            'linked_page' => '/macht-mit/',
+        ]); ?>
+    <?php endif; ?>
+</div>

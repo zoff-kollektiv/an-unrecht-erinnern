@@ -1,0 +1,36 @@
+.take-part {
+  @include title-icons;
+
+  align-items: center;
+  background-color: $color-red-light;
+  color: $color-paper;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  padding: 2rem 1rem 0 1rem;
+  position: relative;
+  text-decoration: none;
+
+  @include mq($from: tablet) {
+    margin-top: 8rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-red-dark;
+  }
+
+  svg {
+    margin-bottom: -1rem;
+    margin-top: 2rem;
+    width: 12rem;
+
+    @include mq($from: tablet) {
+      margin-top: 2rem;
+      width: 20rem;
+    }
+  }
+}
