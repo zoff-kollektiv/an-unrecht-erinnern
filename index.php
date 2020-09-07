@@ -52,9 +52,11 @@ if (has_post_thumbnail() && !is_front_page()) {
         <?php the_title(); ?>
       </h1>
 
-      <div class="<?php echo $header_css_class; ?>__excerpt">
-        <?php the_excerpt(); ?>
-      </div>
+      <?php if (!is_page()) : ?>
+        <div class="<?php echo $header_css_class; ?>__excerpt">
+          <?php the_excerpt(); ?>
+        </div>
+      <?php endif; ?>
     </div>
   </header>
 
