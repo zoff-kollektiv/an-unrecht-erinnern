@@ -9,4 +9,5 @@ $languages = pll_the_languages([
   <a href="<?php echo $language['url']; ?>" class="language">
     <?php echo $language['name']; ?>
   </a>
-<?php endforeach; ?>
+<?php endforeach;
+?>
